@@ -1,0 +1,106 @@
+{
+  "run_id": "7bba8d3ae7af6a07d855aa8c48cf0f14",
+  "network": {
+    "address": "193.141.127.102/24",
+    "gateway": "193.141.127.254",
+    "dns": [
+      "4.2.2.4"
+    ],
+    "hostname": "ubuntu-test",
+    "domain": "",
+    "mac": "8c:dc:d4:b7:e3:09"
+  },
+  "username": "provision",
+  "boot_mode": "uefi",
+  "disks": [
+    {
+      "path": "/dev/disk/by-id/wwn-0x600508b1001c6d005714f698ca5f0135",
+      "device": "/dev/sda",
+      "serial": "PDNLH0BRH8N35G",
+      "wwn": "0x600508b1001c6d005714f698ca5f0135",
+      "size": 1000171331584,
+      "model": "LOGICAL VOLUME",
+      "bus": "sas",
+      "media": "SSD",
+      "raid": {
+        "resource": "/redfish/v1/Systems/1/SmartStorage/ArrayControllers/0/LogicalDrives/1/",
+        "wwn": "600508b1001c6d005714f698ca5f0135",
+        "size": 1000170586112,
+        "raid": "1",
+        "members": [
+          "/redfish/v1/Systems/1/SmartStorage/ArrayControllers/0/DiskDrives/0/",
+          "/redfish/v1/Systems/1/SmartStorage/ArrayControllers/0/DiskDrives/1/"
+        ],
+        "model": "RAID logical disk 1"
+      },
+      "members": [
+        {
+          "resource": "/redfish/v1/Systems/1/SmartStorage/ArrayControllers/0/DiskDrives/0/",
+          "serial": "S3Z8NB1KB89257J",
+          "model": "Samsung",
+          "bus": "SATA",
+          "media": "SSD",
+          "size": 1000204140544,
+          "location": "1I:0:1",
+          "wwn": null
+        },
+        {
+          "resource": "/redfish/v1/Systems/1/SmartStorage/ArrayControllers/0/DiskDrives/1/",
+          "serial": "S3Z8NB1KB88224D",
+          "model": "Samsung",
+          "bus": "SATA",
+          "media": "SSD",
+          "size": 1000204140544,
+          "location": "1I:0:2",
+          "wwn": null
+        }
+      ]
+    },
+    {
+      "path": "/dev/disk/by-id/wwn-0x600508b1001cb60bf3476b74719bc055",
+      "device": "/dev/sdb",
+      "serial": "PDNLH0BRH8N35G",
+      "wwn": "0x600508b1001cb60bf3476b74719bc055",
+      "size": 4000753475584,
+      "model": "LOGICAL VOLUME",
+      "bus": "sas",
+      "media": "HDD",
+      "raid": {
+        "resource": "/redfish/v1/Systems/1/SmartStorage/ArrayControllers/0/LogicalDrives/2/",
+        "wwn": "600508b1001cb60bf3476b74719bc055",
+        "size": 4000752599040,
+        "raid": "1",
+        "members": [
+          "/redfish/v1/Systems/1/SmartStorage/ArrayControllers/0/DiskDrives/2/",
+          "/redfish/v1/Systems/1/SmartStorage/ArrayControllers/0/DiskDrives/3/"
+        ],
+        "model": "RAID logical disk 2"
+      },
+      "members": [
+        {
+          "resource": "/redfish/v1/Systems/1/SmartStorage/ArrayControllers/0/DiskDrives/2/",
+          "serial": "VBG2DDAR",
+          "model": "WDC",
+          "bus": "SATA",
+          "media": "HDD",
+          "size": 4000786153472,
+          "location": "1I:0:3",
+          "wwn": null
+        },
+        {
+          "resource": "/redfish/v1/Systems/1/SmartStorage/ArrayControllers/0/DiskDrives/3/",
+          "serial": "VBG2UVAR",
+          "model": "WDC",
+          "bus": "SATA",
+          "media": "HDD",
+          "size": 4000786153472,
+          "location": "1I:0:4",
+          "wwn": null
+        }
+      ]
+    }
+  ],
+  "callback": "http://185.255.88.7:8080/aiIuORxUp7tnGi5UTU4QT4-ysEZ5egZG/event",
+  "offline": true,
+  "installation": "prepared-not-started"
+}

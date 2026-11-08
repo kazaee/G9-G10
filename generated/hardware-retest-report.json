@@ -1,0 +1,171 @@
+{
+  "status": "LIVE_RETEST_COMPLETE_NIC_SELECTION_UNRESOLVED",
+  "installation": "not-started",
+  "server_serial": "HZ75NU7565",
+  "ilo_address": "193.141.127.2",
+  "requested_network": {
+    "address": "193.141.127.102/24",
+    "gateway": "193.141.127.254",
+    "dns": [
+      "4.2.2.4"
+    ]
+  },
+  "nics": [
+    {
+      "name": "eno1",
+      "mac": "30:e1:71:6c:30:b0",
+      "carrier": false
+    },
+    {
+      "name": "eno2",
+      "mac": "30:e1:71:6c:30:b1",
+      "carrier": false
+    },
+    {
+      "name": "eno3",
+      "mac": "30:e1:71:6c:30:b2",
+      "carrier": false
+    },
+    {
+      "name": "eno4",
+      "mac": "30:e1:71:6c:30:b3",
+      "carrier": false
+    },
+    {
+      "name": "ens2f0",
+      "mac": "8c:dc:d4:b7:e3:08",
+      "carrier": false
+    },
+    {
+      "name": "ens2f1",
+      "mac": "8c:dc:d4:b7:e3:09",
+      "carrier": false
+    }
+  ],
+  "nic_diagnostics": {
+    "eno1": {
+      "activate_returncode": 0,
+      "activate_error": "",
+      "ethtool": "Settings for eno1:\n\tSupported ports: [ TP ]\n\tSupported link modes:   10baseT/Half 10baseT/Full\n\t                        100baseT/Half 100baseT/Full\n\t                        1000baseT/Half 1000baseT/Full\n\tSupported pause frame use: No\n\tSupports auto-negotiation: Yes\n\tSupported FEC modes: Not reported\n\tAdvertised link modes:  10baseT/Half 10baseT/Full\n\t                        100baseT/Half 100baseT/Full\n\t                        1000baseT/Half 1000baseT/Full\n\tAdvertised pause frame use: No\n\tAdvertised auto-negotiation: Yes\n\tAdvertised FEC modes: Not reported\n\tSpeed: Unknown!\n\tDuplex: Unknown! (255)\n\tAuto-negotiation: on\n\tPort: Twisted Pair\n\tPHYAD: 1\n\tTransceiver: internal\n\tMDI-X: Unknown\n\tSupports Wake-on: g\n\tWake-on: g\n        Current message level: 0x000000ff (255)\n                               drv probe link timer ifdown ifup rx_err tx_err\n\tLink detected: no\n"
+    },
+    "eno2": {
+      "activate_returncode": 0,
+      "activate_error": "",
+      "ethtool": "Settings for eno2:\n\tSupported ports: [ TP ]\n\tSupported link modes:   10baseT/Half 10baseT/Full\n\t                        100baseT/Half 100baseT/Full\n\t                        1000baseT/Half 1000baseT/Full\n\tSupported pause frame use: No\n\tSupports auto-negotiation: Yes\n\tSupported FEC modes: Not reported\n\tAdvertised link modes:  10baseT/Half 10baseT/Full\n\t                        100baseT/Half 100baseT/Full\n\t                        1000baseT/Half 1000baseT/Full\n\tAdvertised pause frame use: No\n\tAdvertised auto-negotiation: Yes\n\tAdvertised FEC modes: Not reported\n\tSpeed: Unknown!\n\tDuplex: Unknown! (255)\n\tAuto-negotiation: on\n\tPort: Twisted Pair\n\tPHYAD: 2\n\tTransceiver: internal\n\tMDI-X: Unknown\n\tSupports Wake-on: g\n\tWake-on: g\n        Current message level: 0x000000ff (255)\n                               drv probe link timer ifdown ifup rx_err tx_err\n\tLink detected: no\n"
+    },
+    "eno3": {
+      "activate_returncode": 0,
+      "activate_error": "",
+      "ethtool": "Settings for eno3:\n\tSupported ports: [ TP ]\n\tSupported link modes:   10baseT/Half 10baseT/Full\n\t                        100baseT/Half 100baseT/Full\n\t                        1000baseT/Half 1000baseT/Full\n\tSupported pause frame use: No\n\tSupports auto-negotiation: Yes\n\tSupported FEC modes: Not reported\n\tAdvertised link modes:  10baseT/Half 10baseT/Full\n\t                        100baseT/Half 100baseT/Full\n\t                        1000baseT/Half 1000baseT/Full\n\tAdvertised pause frame use: No\n\tAdvertised auto-negotiation: Yes\n\tAdvertised FEC modes: Not reported\n\tSpeed: Unknown!\n\tDuplex: Unknown! (255)\n\tAuto-negotiation: on\n\tPort: Twisted Pair\n\tPHYAD: 3\n\tTransceiver: internal\n\tMDI-X: Unknown\n\tSupports Wake-on: g\n\tWake-on: g\n        Current message level: 0x000000ff (255)\n                               drv probe link timer ifdown ifup rx_err tx_err\n\tLink detected: no\n"
+    },
+    "eno4": {
+      "activate_returncode": 0,
+      "activate_error": "",
+      "ethtool": "Settings for eno4:\n\tSupported ports: [ TP ]\n\tSupported link modes:   10baseT/Half 10baseT/Full\n\t                        100baseT/Half 100baseT/Full\n\t                        1000baseT/Half 1000baseT/Full\n\tSupported pause frame use: No\n\tSupports auto-negotiation: Yes\n\tSupported FEC modes: Not reported\n\tAdvertised link modes:  10baseT/Half 10baseT/Full\n\t                        100baseT/Half 100baseT/Full\n\t                        1000baseT/Half 1000baseT/Full\n\tAdvertised pause frame use: No\n\tAdvertised auto-negotiation: Yes\n\tAdvertised FEC modes: Not reported\n\tSpeed: Unknown!\n\tDuplex: Unknown! (255)\n\tAuto-negotiation: on\n\tPort: Twisted Pair\n\tPHYAD: 4\n\tTransceiver: internal\n\tMDI-X: Unknown\n\tSupports Wake-on: g\n\tWake-on: g\n        Current message level: 0x000000ff (255)\n                               drv probe link timer ifdown ifup rx_err tx_err\n\tLink detected: no\n"
+    },
+    "ens2f0": {
+      "activate_returncode": 0,
+      "activate_error": "",
+      "ethtool": "Settings for ens2f0:\n\tSupported ports: [ FIBRE ]\n\tSupported link modes:   10000baseT/Full\n\tSupported pause frame use: Symmetric\n\tSupports auto-negotiation: No\n\tSupported FEC modes: Not reported\n\tAdvertised link modes:  10000baseT/Full\n\tAdvertised pause frame use: Symmetric\n\tAdvertised auto-negotiation: No\n\tAdvertised FEC modes: Not reported\n\tSpeed: Unknown!\n\tDuplex: Unknown! (255)\n\tAuto-negotiation: off\n\tPort: Other\n\tPHYAD: 0\n\tTransceiver: internal\n\tSupports Wake-on: d\n\tWake-on: d\n        Current message level: 0x00000007 (7)\n                               drv probe link\n\tLink detected: no\n"
+    },
+    "ens2f1": {
+      "activate_returncode": 0,
+      "activate_error": "",
+      "ethtool": "Settings for ens2f1:\n\tSupported ports: [ FIBRE ]\n\tSupported link modes:   10000baseT/Full\n\tSupported pause frame use: Symmetric\n\tSupports auto-negotiation: No\n\tSupported FEC modes: Not reported\n\tAdvertised link modes:  10000baseT/Full\n\tAdvertised pause frame use: Symmetric\n\tAdvertised auto-negotiation: No\n\tAdvertised FEC modes: Not reported\n\tSpeed: Unknown!\n\tDuplex: Unknown! (255)\n\tAuto-negotiation: off\n\tPort: FIBRE\n\tPHYAD: 0\n\tTransceiver: internal\n\tSupports Wake-on: d\n\tWake-on: d\n        Current message level: 0x00000007 (7)\n                               drv probe link\n\tLink detected: no\n"
+    }
+  },
+  "existing_systems": [
+    {
+      "device": "/dev/sda2",
+      "os": "PRETTY_NAME=\"Ubuntu 24.04.3 LTS\"\nNAME=\"Ubuntu\"\nVERSION_ID=\"24.04\"\nVERSION=\"24.04.3 LTS (Noble Numbat)\"\nVERSION_CODENAME=noble\nID=ubuntu\nID_LIKE=debian\nHOME_URL=\"https://www.ubuntu.com/\"\nSUPPORT_URL=\"https://help.ubuntu.com/\"\nBUG_REPORT_URL=\"https://bugs.launchpad.net/ubuntu/\"\nPRIVACY_POLICY_URL=\"https://www.ubuntu.com/legal/terms-and-policies/privacy-policy\"\nUBUNTU_CODENAME=noble\nLOGO=ubuntu-logo\n",
+      "hostname": "ubuntu-server",
+      "accounts": [
+        {
+          "name": "root",
+          "uid": 0,
+          "shell": "/bin/bash",
+          "password_state": "password-set"
+        },
+        {
+          "name": "ubuntu",
+          "uid": 1000,
+          "shell": "/bin/bash",
+          "password_state": "password-set"
+        }
+      ],
+      "network": {
+        "50-cloud-init.yaml": {
+          "ethernets": {
+            "primary": {
+              "match": {
+                "name": "en*"
+              },
+              "addresses": [
+                "193.141.127.102/24"
+              ],
+              "nameservers": {
+                "addresses": [
+                  "4.2.2.4"
+                ]
+              },
+              "routes": [
+                {
+                  "to": "default",
+                  "via": "193.141.127.254"
+                }
+              ]
+            }
+          },
+          "bonds": {},
+          "vlans": {}
+        }
+      },
+      "provision_marker": null,
+      "installer_log_times": {
+        "subiquity-client-info.log.1837": 1790439674.5809543,
+        "subiquity-client-debug.log.1837": 1790439674.5819542,
+        "subiquity-client-debug.log": 1790439674.5819542,
+        "subiquity-server-info.log.2585": 1790445640.4697459,
+        "cloud-init-output.log": 1790439474.1599612,
+        "autoinstall-user-data": 1790445586.1457477,
+        "subiquity-client-info.log.2365": 1790439674.5789542,
+        "subiquity-server-debug.log.2585": 1790445640.5257459,
+        "subiquity-server-debug.log": 1790445640.5257459,
+        "subiquity-client-debug.log.2365": 1790439674.5799544,
+        "media-info": 1790445585.7287478,
+        "cloud-init.log": 1790439474.1619613,
+        "subiquity-server-info.log": 1790445640.4697459,
+        "installer-journal.txt": 1790445640.6837459,
+        "casper-md5check.json": 1790440943.92091,
+        "subiquity-client-info.log": 1790439674.5809543,
+        "device-map.json": 1790439790.1149502,
+        "curtin-install.log": 1790445585.7707477
+      }
+    }
+  ],
+  "existing_installer_log_date_utc": "2026-09-26T17:59:45.770748+00:00",
+  "existing_network_note": "The existing netplan matches en* and assigns the same static address to multiple physical interfaces.",
+  "ui_entrypoint": "Start-Provisioner.cmd",
+  "ui_real_ilo_connection_test": "passed",
+  "tests_passed": 27,
+  "pending": [
+    "Identify intended NIC using switch MAC/physical port or establish a detectable link",
+    "Prepare updated ISO and review disks before the single INSTALL confirmation"
+  ],
+  "evidence_directory": "logs/2026-10-01_09-53-03",
+  "reusable_vsp_capture_test": "passed against actual iLO",
+  "restored_server_state": {
+    "PowerState": "On",
+    "PostState": "InPost",
+    "media": [
+      {
+        "Inserted": false,
+        "Image": ""
+      },
+      {
+        "Inserted": false,
+        "Image": ""
+      }
+    ]
+  }
+}

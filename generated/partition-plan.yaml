@@ -1,0 +1,33 @@
+version: 1
+boot_mode: uefi
+boot_disk: /dev/disk/by-id/wwn-0x600508b1001c6d005714f698ca5f0135
+reason: Boot, swap and backup on SSD; root on separate data disk
+disks:
+- path: /dev/disk/by-id/wwn-0x600508b1001c6d005714f698ca5f0135
+  ptable: gpt
+  partitions:
+  - name: efi
+    size: 1G
+    filesystem: fat32
+    mount: /boot/efi
+    flag: boot
+  - name: boot
+    size: 2G
+    filesystem: ext4
+    mount: /boot
+  - name: swap
+    size: 16G
+    filesystem: swap
+  - name: backup
+    size: -1
+    filesystem: ext4
+    mount: /backup
+- path: /dev/disk/by-id/wwn-0x600508b1001cb60bf3476b74719bc055
+  ptable: gpt
+  partitions:
+  - name: root
+    size: -1
+    filesystem: ext4
+    mount: /
+lvm: []
+untouched: []

@@ -1,0 +1,16 @@
+[OK] TCP 443 reachable
+[INFO] TLS verification: False
+[OK] HTTPS endpoint: /redfish/v1/
+[OK] Authentication successful
+[OK] Server: ProLiant DL360 Gen10 Power: On
+[OK] RAM GiB: 256
+[OK] Manager: iLO 5 Firmware: iLO 5 v3.21
+[OK] Virtual media devices: 2
+[DISK] Samsung SSD 870 EVO 500GB S6P6NL0Y918696N 500 GB SATA SSD
+[DISK] Samsung SSD 870 EVO 500GB S6P6NL0Y919041T 500 GB SATA SSD
+[INFO] Writing customized ISO: generated\discovery.iso
+[OK] ISO seed and UEFI boot entry verified
+[INFO] iLO media URL: http://185.255.88.7:8080/NF_vBB73Lkuah2DMqsWa_TTZ/ubuntu.iso
+[OK] Virtual media reports Inserted=true
+[INFO] BOOT_CAPABILITIES power=On mode=UEFI targets=['None', 'Cd', 'Hdd', 'Usb', 'SDCard', 'Utilities', 'Diags', 'BiosSetup', 'Pxe', 'UefiShell', 'UefiHttp', 'UefiTarget'] uefi_targets=['UsbClass(0xFFFF,0xFFFF,0xFF,0xFF,0xFF)', 'PciRoot(0x0)/Pci(0x14,0x0)/USB(0x13,0x0)', 'PciRoot(0x0)/Pci(0x1C,0x0)/Pci(0x0,0x0)/MAC(08F1EA7DBFC8,0x1)/IPv4(0.0.0.0)/Uri()', 'PciRoot(0x0)/Pci(0x1C,0x0)/Pci(0x0,0x0)/MAC(08F1EA7DBFC8,0x1)/IPv4(0.0.0.0)', 'PciRoot(0x0)/Pci(0x1C,0x0)/Pci(0x0,0x0)/MAC(08F1EA7DBFC8,0x1)/IPv6(0000:0000:0000:0000:0000:0000:0000:0000)/Uri()', 'PciRoot(0x0)/Pci(0x1C,0x0)/Pci(0x0,0x0)/MAC(08F1EA7DBFC8,0x1)/IPv6(0000:0000:0000:0000:0000:0000:0000:0000)', 'PciRoot(0x3)/Pci(0x2,0x0)/Pci(0x0,0x0)/MAC(D4F5EF74CE24,0x1)/IPv4(0.0.0.0)/Uri()', 'PciRoot(0x3)/Pci(0x2,0x0)/Pci(0x0,0x0)/MAC(D4F5EF74CE24,0x1)/IPv4(0.0.0.0)', 'PciRoot(0x3)/Pci(0x2,0x0)/Pci(0x0,0x0)/MAC(D4F5EF74CE24,0x1)/IPv6(0000:0000:0000:0000:0000:0000:0000:0000)/Uri()', 'PciRoot(0x3)/Pci(0x2,0x0)/Pci(0x0,0x0)/MAC(D4F5EF74CE24,0x1)/IPv6(0000:0000:0000:0000:0000:0000:0000:0000)', 'PciRoot(0x1)/Pci(0x0,0x0)/Pci(0x0,0x0)/NVMe(0x1,61-33-A4-51-45-38-25-00)', 'PciRoot(0x2)/Pci(0x0,0x0)/Pci(0x0,0x0)/NVMe(0x1,5C-AE-A3-51-47-38-25-00)', 'PciRoot(0x3)/Pci(0x0,0x0)/Pci(0x0,0x0)/Scsi(0x17B,0x0)', 'PciRoot(0x0)/Pci(0x1C,0x4)/Pci(0x0,0x4)/USB(0x1,0x0)']
+[FAIL] PATCH /redfish/v1/Managers/1/VirtualMedia/2/: HTTP 400: {"error":{"code":"iLO.0.10.ExtendedInfo","message":"See @Message.ExtendedInfo for more information.","@Message.ExtendedInfo":[{"MessageArgs":["BootOnNextServerReset"],"MessageId":"iLO.2.25.UnableToModifyDuringSystemPOST"}]}}

@@ -1,0 +1,3 @@
+GET /redfish/v1/Managers/1/VirtualMedia/2/ -> 200
+GET /redfish/v1/Managers/1/VirtualMedia/2/ -> 200
+GET /redfish/v1/Managers/1/VirtualMedia/2/ -> 200

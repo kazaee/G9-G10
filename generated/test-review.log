@@ -1,0 +1,86 @@
+[LOGIN] Administrator credentials saved locally: C:\Users\AH1D55~1.KHA\AppData\Local\Temp\9\tmp3oizs1yv\login-credentials.json (not printed in logs)
+[LOGIN] Administrator credentials saved locally: C:\Users\AH1D55~1.KHA\AppData\Local\Temp\9\tmp3oizs1yv\login-credentials.json (not printed in logs)
+[LOGIN] Administrator credentials saved locally: C:\Users\AH1D55~1.KHA\AppData\Local\Temp\9\tmp3oizs1yv\login-credentials.json (not printed in logs)
+[INFO] BOOT_CAPABILITIES power=Off mode=None targets=['Cd', 'Hdd', 'UefiTarget'] uefi_targets=['CD.Virtual.3.1']
+[INFO] Resolved virtual-CD UEFI target: CD.Virtual.3.1
+[OK] One-time virtual CD boot requested: UefiTarget
+[INFO] BOOT_CAPABILITIES power=Off mode=None targets=['Cd', 'Hdd', 'UefiTarget'] uefi_targets=['sd-path', 'virtual-cd-path']
+[INFO] Resolved virtual-CD UEFI target: virtual-cd-path
+[INFO] Virtual CD boot-on-next-reset confirmed (Oem.Hpe)
+[INFO] BOOT_CAPABILITIES power=Off mode=None targets=['Cd', 'Hdd', 'UefiTarget'] uefi_targets=[]
+[INFO] Resolved virtual-CD UEFI target: not resolved
+[OK] One-time virtual CD boot requested: Cd
+[INFO] BOOT_CAPABILITIES power=Off mode=None targets=['Cd', 'Hdd', 'UefiTarget'] uefi_targets=['sd-path']
+[INFO] Resolved virtual-CD UEFI target: not resolved
+[INFO] Virtual CD boot-on-next-reset confirmed (Oem.Hpe)
+[OK] One-time virtual CD boot requested through Virtual Media and system override: Cd
+[INFO] BOOT_CAPABILITIES power=Off mode=None targets=['Cd', 'Hdd', 'UefiTarget'] uefi_targets=[]
+[INFO] Resolved virtual-CD UEFI target: not resolved
+[INFO] BOOT_CAPABILITIES power=On mode=None targets=['Cd', 'Hdd', 'UefiTarget'] uefi_targets=[]
+[INFO] Resolved virtual-CD UEFI target: not resolved
+[INFO] POST blocks boot configuration; approved boot recovery: one ForceOff, wait for Off, then configure media and power on.
+[INFO] Power Off confirmed; retrying virtual-CD boot configuration once.
+[INFO] BOOT_CAPABILITIES power=Off mode=None targets=['Cd', 'Hdd', 'UefiTarget'] uefi_targets=[]
+[INFO] Resolved virtual-CD UEFI target: not resolved
+[INFO] Virtual CD boot-on-next-reset confirmed (Oem.Hpe)
+[OK] One-time virtual CD boot requested through Virtual Media and system override: Cd
+[INFO] BOOT_CAPABILITIES power=Off mode=None targets=[] uefi_targets=[]
+[INFO] Resolved virtual-CD UEFI target: not resolved
+[INFO] BOOT_CAPABILITIES power=Off mode=None targets=['Cd', 'Hdd', 'UefiTarget'] uefi_targets=['sd-path', 'virtual-cd-path']
+[INFO] Resolved virtual-CD UEFI target: virtual-cd-path
+[INFO] Virtual CD boot-on-next-reset confirmed (Oem.Hpe)
+[OK] One-time virtual CD boot requested through Virtual Media and system override: UefiTarget
+[INFO] BOOT_CAPABILITIES power=Off mode=None targets=['Cd', 'Hdd', 'UefiTarget'] uefi_targets=['CD.Virtual.2.1']
+[INFO] Resolved virtual-CD UEFI target: CD.Virtual.2.1
+[OK] One-time virtual CD boot requested: UefiTarget
+[INFO] BOOT_CAPABILITIES power=Off mode=None targets=['Cd', 'Hdd', 'UefiTarget'] uefi_targets=[]
+[INFO] Resolved virtual-CD UEFI target: not resolved
+[INFO] Virtual CD boot-on-next-reset confirmed (Oem.Hpe)
+[OK] One-time virtual CD boot requested through Virtual Media and system override: Cd
+[INFO] BOOT_CAPABILITIES power=Off mode=None targets=['Cd', 'Hdd', 'UefiTarget'] uefi_targets=[]
+[INFO] Resolved virtual-CD UEFI target: not resolved
+[INFO] Virtual CD boot-on-next-reset confirmed (Oem.Hpe)
+[OK] One-time virtual CD boot requested through Virtual Media and system override: Cd
+[INFO] BOOT_CAPABILITIES power=Off mode=None targets=['Cd', 'Hdd', 'UefiTarget'] uefi_targets=[]
+[INFO] Resolved virtual-CD UEFI target: not resolved
+[OK] One-time virtual CD boot requested: Cd
+[INFO] BOOT_CAPABILITIES power=Off mode=None targets=['Cd', 'Hdd', 'UefiTarget'] uefi_targets=[]
+[INFO] Resolved virtual-CD UEFI target: not resolved
+[INFO] BOOT_CAPABILITIES power=Off mode=None targets=['Cd', 'Hdd', 'UefiTarget'] uefi_targets=[]
+[INFO] Resolved virtual-CD UEFI target: not resolved
+[INFO] BOOT_CAPABILITIES power=Off mode=None targets=['Cd', 'Hdd', 'UefiTarget'] uefi_targets=[]
+[INFO] Resolved virtual-CD UEFI target: not resolved
+[INFO] Power Off confirmed; retrying virtual-CD boot configuration once.
+[INFO] BOOT_CAPABILITIES power=Off mode=None targets=['Cd', 'Hdd', 'UefiTarget'] uefi_targets=[]
+[INFO] Resolved virtual-CD UEFI target: not resolved
+[INFO] BOOT_CAPABILITIES power=On mode=None targets=['Cd', 'Hdd', 'UefiTarget'] uefi_targets=[]
+[INFO] Resolved virtual-CD UEFI target: not resolved
+[INFO] POST blocks boot configuration; approved boot recovery: one ForceOff, wait for Off, then configure media and power on.
+[INFO] BOOT_CAPABILITIES power=Off mode=None targets=['Hdd'] uefi_targets=[]
+[INFO] Resolved virtual-CD UEFI target: not resolved
+[INFO] BOOT_CAPABILITIES power=Off mode=None targets=['Cd', 'Hdd', 'UefiTarget'] uefi_targets=[]
+[INFO] Resolved virtual-CD UEFI target: not resolved
+[INFO] BOOT_CAPABILITIES power=Off mode=None targets=['Cd', 'Hdd', 'UefiTarget'] uefi_targets=[]
+[INFO] Resolved virtual-CD UEFI target: not resolved
+[OK] Ejection confirmed by readback after ambiguous response
+[INFO] iLO media URL: http://127.0.0.1:0/job-token/ubuntu.iso
+[INFO] Media command response timed out; checking actual insertion state
+[OK] Virtual media reports Inserted=true
+[INFO] iLO media URL: http://127.0.0.1:0/test-token/ubuntu.iso
+[INFO] BOOT_CAPABILITIES power=On mode=None targets=['Cd'] uefi_targets=['FD.Virtual.1.1']
+[INFO] Resolved virtual-CD UEFI target: not resolved
+[INFO] BOOT_CAPABILITIES power=On mode=None targets=['Cd', 'UefiTarget'] uefi_targets=['FD.Virtual.1.1']
+[INFO] Resolved virtual-CD UEFI target: not resolved
+[INFO] Virtual CD boot-on-next-reset confirmed (Oem.Hp)
+[OK] One-time virtual CD boot requested through Virtual Media and system override: Cd
+[INFO] BOOT_CAPABILITIES power=On mode=None targets=['Cd', 'UefiTarget'] uefi_targets=['CD.Virtual.2.1']
+[INFO] Resolved virtual-CD UEFI target: CD.Virtual.2.1
+[OK] One-time virtual CD boot requested: UefiTarget
+[INFO] iLO media URL: http://127.0.0.1:0/test/ubuntu.iso
+[INFO] BOOT_CAPABILITIES power=On mode=None targets=['Cd', 'UefiTarget'] uefi_targets=['Generic.USB.1.1']
+[INFO] Resolved virtual-CD UEFI target: not resolved
+[OK] One-time virtual CD boot requested: Cd
+----------------------------------------------------------------------
+Ran 214 tests in 8.034s
+
+OK (skipped=2)

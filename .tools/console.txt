@@ -1,0 +1,7 @@
+Warning: Permanently added '193.141.127.2' (RSA) to the list of known hosts.
+textcons
+
+Starting Text Console.
+Press 'Esc (' to return to the CLI Session.
+
+[0m[1m[0m[1m[2J[HMonitor is in graphics mode or an unsupported text mode.[0m[1m[0m[1m[2J[HMonitor is in graphics mode or an unsupported text mode.

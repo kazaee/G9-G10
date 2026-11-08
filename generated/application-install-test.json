@@ -1,0 +1,54 @@
+{
+  "updated_at": 1790928039.037157,
+  "server_serial": "HZ75NU7565",
+  "ilo_address": "193.141.127.2",
+  "workflow": "Running app.py HTTP handlers used for connect, live discovery, prepare and install",
+  "browser_verification": "Actual Edge rendering and DOM state inspected; automated clicks were unavailable",
+  "fixes": [
+    "Clear primary action before live discovery",
+    "Wait cursor only for active operations",
+    "Elapsed time and next step guidance",
+    "Exclusive Windows listening port",
+    "Read-only iLO retries",
+    "Nonfatal progress polling timeouts",
+    "Verify media state after ambiguous command timeout",
+    "Offline installation without guessing a disconnected NIC",
+    "Generated administrator password and installed-account checks"
+  ],
+  "automated_tests_passed": 37,
+  "unit_tests_are_not_hardware_installation_proof": true,
+  "disk_binding_fix": "After WWN/capacity preflight, map reviewed by-id paths to the canonical paths required by Subiquity",
+  "live_discovery": "logs/2026-10-01_15-20-50/live-inventory.json",
+  "prepare": "logs/2026-10-02_00-34-48/final-result.json",
+  "installation_run": "logs\\2026-10-02_00-36-21",
+  "run_id": "ad3684826314c0a6482538beede63470",
+  "result": {
+    "status": "installation-in-progress",
+    "installation": "not-yet-verified"
+  },
+  "network": {
+    "address": "193.141.127.102/24",
+    "gateway": "193.141.127.254",
+    "dns": [
+      "4.2.2.4"
+    ],
+    "hostname": "ubuntu-test",
+    "domain": "",
+    "mac": "",
+    "deferred": true,
+    "allowed_macs": [
+      "30:e1:71:6c:30:b0",
+      "30:e1:71:6c:30:b1",
+      "30:e1:71:6c:30:b2",
+      "30:e1:71:6c:30:b3",
+      "8c:dc:d4:b7:e3:08",
+      "8c:dc:d4:b7:e3:09"
+    ]
+  },
+  "selected_disks": [
+    "/dev/disk/by-id/wwn-0x600508b1001c6d005714f698ca5f0135"
+  ],
+  "credentials_file": "generated/login-credentials.json",
+  "verification_file": null,
+  "console_authentication": null
+}

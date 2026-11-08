@@ -1,0 +1,24 @@
+ilo:
+  address: 193.141.127.2
+  username: ILO
+  verify_tls: false
+network:
+  address: 193.141.127.102/24
+  gateway: 193.141.127.254
+  dns: [4.2.2.4]
+  hostname: ubuntu-test
+  domain: ''
+  mac: ''
+identity:
+  username: provision
+  ssh_public_key: ''
+  generate_password: true
+  ssh_password_login: true
+media:
+  source_iso: ISO/ubuntu-24.04.3-live-server-amd64.iso
+  host: 172.20.224.253
+  port: 8080
+  ram_iso: false
+installation:
+  offline: true
+  serial_log: .tools/serial-debug.log

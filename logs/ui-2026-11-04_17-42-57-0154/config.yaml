@@ -1,0 +1,29 @@
+ilo:
+  address: 172.20.224.42
+  username: ILO
+  verify_tls: false
+  generation: 5
+network:
+  address: 193.141.127.102/24
+  gateway: 193.141.127.254
+  dns:
+  - 4.2.2.4
+  hostname: ubuntu-test
+  domain: ''
+  mac: ''
+identity:
+  username: root
+  ssh_public_key: ''
+  generate_password: true
+  ssh_password_login: true
+  ssh_port: 22
+media:
+  source_iso: C:\Users\ah.khazaee\Desktop\test\ISO\ubuntu-24.04.3-live-server-amd64.iso
+  host: 185.255.88.7
+  port: 8080
+  ram_iso: false
+installation:
+  offline: true
+  serial_log: logs\ui-2026-11-04_17-42-57-0154\serial.log
+  os: ubuntu24
+  rdp_port: 33096

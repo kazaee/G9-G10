@@ -1,0 +1,47 @@
+{
+  "status": "BLOCKED_OS_NETWORK_NO_CARRIER",
+  "installation": "not-started",
+  "disks_erased": false,
+  "live_boot_verified": "Ubuntu 24.04.3 UEFI",
+  "inventory_transport": "iLO COM2 serial console",
+  "nics": [
+    {
+      "name": "eno1",
+      "mac": "30:e1:71:6c:30:b0",
+      "carrier": false
+    },
+    {
+      "name": "eno2",
+      "mac": "30:e1:71:6c:30:b1",
+      "carrier": false
+    },
+    {
+      "name": "eno3",
+      "mac": "30:e1:71:6c:30:b2",
+      "carrier": false
+    },
+    {
+      "name": "eno4",
+      "mac": "30:e1:71:6c:30:b3",
+      "carrier": false
+    },
+    {
+      "name": "ens2f0",
+      "mac": "8c:dc:d4:b7:e3:08",
+      "carrier": false
+    },
+    {
+      "name": "ens2f1",
+      "mac": "8c:dc:d4:b7:e3:09",
+      "carrier": false
+    }
+  ],
+  "linux_disk_wwns": [
+    "0x600508b1001c6d005714f698ca5f0135",
+    "0x600508b1001cb60bf3476b74719bc055"
+  ],
+  "unit_tests_passed": 14,
+  "required_next_step": "Establish physical link on an OS NIC to the configured subnet, then repeat live discovery. Review the SSD partition plan and obtain the single INSTALL confirmation before installation.",
+  "evidence": "logs/2026-10-01_00-28-28/live-inventory.json",
+  "server_after_discovery": "powered off; virtual media ejected"
+}

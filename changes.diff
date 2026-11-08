@@ -1,0 +1,268 @@
+--- original/app.py
++++ updated/app.py
+@@ -137,6 +137,8 @@
+                 task()
+             except Exception as exc:
+                 self.state.update(stage='error', message=str(exc))
++                with self.lock:
++                    self.state['log'] = (self.state['log'] + ['[FAIL] ' + str(exc)])[-150:]
+             finally:
+                 self.state['busy'] = False
+         threading.Thread(target=work, daemon=True).start()
+@@ -373,6 +375,11 @@
+             old_live = json.loads(old_live_file.read_text()) if old_live_file.exists() else None
+             connection = Ilo(settings, body['password'], run / 'ilo.log')
+             discovery = connection.discover()
++            profile = discovery.get('ilo_profile', {})
++            settings['generation'] = profile.get('generation')
++            self.state['ilo_profile'] = profile
++            self.state['log'].append('[INFO] iLO generation: ' + str(profile.get('generation') or 'unknown')
++                                     + '; firmware: ' + str(profile.get('firmware') or 'unknown'))
+             self.config['ilo'], self.password = settings, body['password']
+             self.discovery, self.live, self.reviewed = discovery, None, None
+             self.prepared_credentials = self.completed_credentials = None
+--- original/src/ilo.py
++++ updated/src/ilo.py
+@@ -1,5 +1,6 @@
+ """Small Redfish adapter; follow advertised links, including iLO 4 OEM storage."""
+ import json
++import re
+ import socket
+ import time
+ from urllib.parse import urlsplit
+@@ -49,6 +50,17 @@
+ 
+ def link(value):
+     return value.get('@odata.id', value.get('href')) if isinstance(value, dict) else None
++
++
++def manager_profile(managers):
++    """Read the controller generation from identity, never from firmware version."""
++    for _, manager in managers:
++        identity = ' '.join(str(manager.get(key, '')) for key in ('Model', 'Name', 'Description'))
++        match = re.search(r'\biLO\s*([4-7])\b', identity, re.I)
++        if match:
++            return {'generation': int(match.group(1)), 'model': manager.get('Model', ''),
++                    'firmware': manager.get('FirmwareVersion', '')}
++    return {'generation': None, 'model': '', 'firmware': ''}
+ 
+ 
+ def links(value):
+@@ -149,7 +161,8 @@
+         for disk in physical:
+             print('[DISK]', disk.get('Model'), disk.get('SerialNumber'), disk.get('CapacityGB'), 'GB', disk.get('InterfaceType'), disk.get('MediaType'))
+         return {'system_path': self.system_path, 'system': self.system, 'managers': managers,
+-                'media': media, 'resources': resources, 'root': self.root}
++                'media': media, 'resources': resources, 'root': self.root,
++                'ilo_profile': manager_profile(managers)}
+ 
+     def reset(self, kind='ForceRestart'):
+         action = self.system.get('Actions', {}).get('#ComputerSystem.Reset')
+--- original/src/serial_capture.py
++++ updated/src/serial_capture.py
+@@ -1,5 +1,6 @@
+-"""Small OpenSSH VSP capture; passwords are supplied only through askpass environment."""
++"""OpenSSH VSP capture with generation-aware terminal setup and diagnostics."""
+ import os
++import re
+ import subprocess
+ import tempfile
+ import time
+@@ -12,48 +13,105 @@
+         self.config, self.password, self.log = config, password, Path(log)
+         self.process = self.output = self.directory = None
+ 
++    def _diagnostic(self, text):
++        lower = text.lower()
++        if 'currently in use' in lower or 'already in use' in lower:
++            return 'iLO VSP is occupied by another session. Close the other text console and retry.'
++        if 'permission denied' in lower or 'authentication failed' in lower:
++            return 'iLO SSH login was rejected; verify credentials and SSH access for this account.'
++        if 'no matching' in lower or 'bad configuration option' in lower or 'bad key types' in lower:
++            return 'SSH algorithm negotiation failed; inspect the offered algorithms in the serial log.'
++        if 'host key verification failed' in lower or 'remote host identification has changed' in lower:
++            return 'SSH host key verification failed; verify the target identity before updating generated/ilo-known-hosts.'
++        if any(s in lower for s in ('connection refused', 'connection timed out', 'no route to host', 'could not resolve hostname')):
++            return 'iLO SSH is unreachable; check SSH enablement, SSH port, jump-host routing and firewall.'
++        if any(s in lower for s in ('not authorized', 'insufficient privilege', 'access denied', 'permission required')):
++            return 'iLO denied VSP access; check the account Remote Console privilege.'
++        return None
++
++    def _failure(self, reason):
++        text = self.log.read_text(errors='replace') if self.log.exists() else ''
++        # Never include a credential, even if a device unexpectedly echoes it.
++        safe = text.replace(self.password, '[REDACTED]') if self.password else text
++        safe = re.sub(r'\x1b\[[0-?]*[ -/]*[@-~]', '', safe)
++        tail = '\n'.join(safe.splitlines()[-12:])[-2400:]
++        return RuntimeError(f'{reason} No ISO boot or disk wipe has started. '
++                            f'SSH/VSP log: {self.log.resolve()}\n{tail}')
++
+     def start(self):
+-        self.directory = tempfile.TemporaryDirectory(prefix='ilo-askpass-')
+-        askpass = Path(self.directory.name) / ('askpass.cmd' if os.name == 'nt' else 'askpass.sh')
+-        askpass.write_text('@echo off\npowershell.exe -NoProfile -Command "[Console]::Write($env:ILO_PASSWORD)"\n'
+-                          if os.name == 'nt' else '#!/bin/sh\nprintf "%s" "$ILO_PASSWORD"\n')
+-        askpass.chmod(0o700)
+-        env = dict(os.environ, ILO_PASSWORD=self.password, SSH_ASKPASS=str(askpass), SSH_ASKPASS_REQUIRE='force')
+-        address = self.config['address']
+-        host = urlsplit(address if '://' in address else 'https://' + address).hostname
+-        known = Path('generated/ilo-known-hosts').resolve()
+-        known.parent.mkdir(exist_ok=True)
+-        args = ['ssh', '-T', '-o', 'StrictHostKeyChecking=accept-new', '-o', 'UserKnownHostsFile=' + str(known),
+-                '-o', 'PubkeyAuthentication=no', '-o', 'ConnectTimeout=10', '-o', 'HostKeyAlgorithms=+ssh-rsa',
+-                '-o', 'KexAlgorithms=+diffie-hellman-group14-sha1', '-p', str(self.config.get('ssh_port', 22)),
+-                self.config['username'] + '@' + host]
++        self.log.parent.mkdir(parents=True, exist_ok=True)
++        self.output = self.log.open('wb')
+         try:
+-            self.output = self.log.open('wb')
+-            self.process = subprocess.Popen(args, stdin=subprocess.PIPE, stdout=self.output, stderr=subprocess.STDOUT, env=env)
+-            self.process.stdin.write(b'vsp\r\n')
+-            self.process.stdin.flush()
+-            deadline = time.monotonic() + 25
++            self.directory = tempfile.TemporaryDirectory(prefix='ilo-askpass-')
++            askpass = Path(self.directory.name) / ('askpass.cmd' if os.name == 'nt' else 'askpass.sh')
++            askpass.write_text('@echo off\npowershell.exe -NoProfile -Command "[Console]::Write($env:ILO_PASSWORD)"\n'
++                              if os.name == 'nt' else '#!/bin/sh\nprintf "%s" "$ILO_PASSWORD"\n')
++            askpass.chmod(0o700)
++            env = dict(os.environ, ILO_PASSWORD=self.password, SSH_ASKPASS=str(askpass),
++                       SSH_ASKPASS_REQUIRE='force', DISPLAY=os.environ.get('DISPLAY') or ':0', TERM='vt100')
++            address = self.config['address']
++            host = urlsplit(address if '://' in address else 'https://' + address).hostname
++            if not host or host.startswith('-'):
++                raise ValueError('Invalid iLO SSH host')
++            known = Path('generated/ilo-known-hosts').resolve()
++            known.parent.mkdir(parents=True, exist_ok=True)
++            generation = str(self.config.get('generation') or '')
++            # Preserve the proven iLO 4 path; request a PTY for newer/unknown firmware.
++            terminal = '-T' if generation == '4' else '-tt'
++            args = ['ssh', terminal, '-o', 'StrictHostKeyChecking=accept-new',
++                    '-o', 'UserKnownHostsFile=' + str(known), '-o', 'PubkeyAuthentication=no',
++                    '-o', 'ConnectTimeout=10', '-o', 'ConnectionAttempts=1',
++                    '-o', 'NumberOfPasswordPrompts=1', '-o', 'ServerAliveInterval=15',
++                    '-o', 'ServerAliveCountMax=3']
++            if generation == '4':
++                args += ['-o', 'HostKeyAlgorithms=+ssh-rsa',
++                         '-o', 'KexAlgorithms=+diffie-hellman-group14-sha1']
++            args += ['-p', str(int(self.config.get('ssh_port', 22))),
++                     '-l', self.config['username'], host]
++            self.output.write(f'[VSP] generation={generation or "unknown"}; terminal={terminal}; '
++                              f'ssh_port={self.config.get("ssh_port", 22)}\n'.encode())
++            self.output.flush()
++            self.process = subprocess.Popen(args, stdin=subprocess.PIPE, stdout=self.output,
++                                            stderr=subprocess.STDOUT, env=env)
++            sent = False
++            deadline = time.monotonic() + 45
+             while time.monotonic() < deadline:
+                 output = self.log.read_text(errors='replace')
+-                if 'Virtual Serial Port Active' in output:
++                error = self._diagnostic(output)
++                if error:
++                    raise self._failure(error)
++                if re.search(r'virtual serial port\s+(?:is\s+)?active\b', output, re.I):
++                    if self.process.poll() is not None:
++                        raise self._failure('iLO closed SSH immediately after VSP activation.')
+                     return self
+-                if 'Virtual Serial Port is currently in use by another session' in output:
+-                    raise RuntimeError('iLO VSP is occupied by another session. Close the text console in the older provisioning panel or exit the other iLO VSP session, then retry installation. No ISO boot or disk wipe has started.')
+-                if 'Permission denied' in output:
+-                    raise RuntimeError('iLO VSP login was rejected; verify iLO credentials. No ISO boot or disk wipe has started.')
+                 if self.process.poll() is not None:
+-                    break
++                    raise self._failure(f'iLO SSH exited (code {self.process.returncode}) before VSP activation.')
++                # iLO 5 receives the command only after the CLP prompt is ready.
++                if not sent and (generation == '4' or re.search(r'hpiLO[^\r\n]*->\s*$', output, re.I)):
++                    self.process.stdin.write(b'vsp\r\n')
++                    self.process.stdin.flush()
++                    sent = True
+                 time.sleep(.5)
+-            raise RuntimeError('Could not open iLO VSP; inspect serial.log before booting')
+-        except Exception:
++            raise self._failure('Timed out waiting for ' + ('VSP activation.' if sent else 'the iLO SSH CLI prompt.'))
++        except Exception as exc:
++            if not isinstance(exc, RuntimeError):
++                exc = self._failure(f'Could not start iLO SSH/VSP: {exc}')
+             self.close()
+-            raise
++            raise exc
+ 
+     def close(self):
+-        if self.process and self.process.poll() is None:
+-            self.process.terminate()
+-            self.process.wait(timeout=10)
+-        if self.output:
+-            self.output.close()
+-        if self.directory:
+-            self.directory.cleanup()
++        try:
++            if self.process and self.process.poll() is None:
++                self.process.terminate()
++                try:
++                    self.process.wait(timeout=10)
++                except subprocess.TimeoutExpired:
++                    self.process.kill()
++                    self.process.wait(timeout=5)
++        finally:
++            if self.process and self.process.stdin:
++                self.process.stdin.close()
++            if self.output:
++                self.output.close()
++            if self.directory:
++                self.directory.cleanup()
+--- original/src/virtual_media.py
++++ updated/src/virtual_media.py
+@@ -219,23 +219,40 @@
+     raise RuntimeError('iLO did not report the ISO inserted. Check iLO-to-media-host routing, firewall and HTTP requests.')
+ 
+ 
++def boot_values(boot, property_name, legacy_name):
++    """Prefer Redfish annotations (iLO 5), retaining iLO 4 field support."""
++    key = property_name + '@Redfish.AllowableValues'
++    values = boot[key] if key in boot else boot.get(legacy_name, [])
++    return values if isinstance(values, list) else []
++
++
+ def boot_once(ilo, media_path, *, require_virtual_cd=False):
+     data = ilo.get(media_path)
+     if not data.get('Inserted') or not data.get('Image'):
+         raise RuntimeError('Virtual CD is not inserted; refusing to reboot')
+     system = ilo.get(ilo.system_path)
+     boot = system.get('Boot', {})
+-    supported = boot.get('BootSourceOverrideSupported', [])
+-    uefi_devices = boot.get('UefiTargetBootSourceOverrideSupported', [])
+-    if require_virtual_cd and 'BootOnNextServerReset' in data.get('Oem', {}).get('Hp', {}):
++    supported = boot_values(boot, 'BootSourceOverrideTarget', 'BootSourceOverrideSupported')
++    uefi_devices = boot_values(boot, 'UefiTargetBootSourceOverride', 'UefiTargetBootSourceOverrideSupported')
++    diagnostic = (f'BOOT_CAPABILITIES power={system.get("PowerState")} '
++                  f'mode={boot.get("BootSourceOverrideMode")} '
++                  f'targets={supported!r} uefi_targets={uefi_devices!r}')
++    print('[INFO]', diagnostic, flush=True)
++    if getattr(ilo, 'log', None):
++        with ilo.log.open('a', encoding='utf-8') as record:
++            record.write(diagnostic + '\n')
++    media_oem = data.get('Oem', {})
++    vendor = next((key for key in ('Hpe', 'Hp')
++                   if 'BootOnNextServerReset' in media_oem.get(key, {})), None)
++    if require_virtual_cd and vendor:
+         # Some iLO 4 firmware accepts the media-specific flag but still boots
+         # the hard disk. Stage the system's one-time optical override as well.
+         # Neither acknowledgement proves that firmware actually loaded the ISO.
+         if 'Cd' not in supported:
+             raise RuntimeError('iLO does not advertise a CD boot override; refusing to reboot')
+-        ilo.request('patch', media_path, {'Oem': {'Hp': {'BootOnNextServerReset': True}}})
++        ilo.request('patch', media_path, {'Oem': {vendor: {'BootOnNextServerReset': True}}})
+         staged = ilo.get(media_path)
+-        if staged.get('Oem', {}).get('Hp', {}).get('BootOnNextServerReset') is not True:
++        if staged.get('Oem', {}).get(vendor, {}).get('BootOnNextServerReset') is not True:
+             raise RuntimeError('iLO did not retain virtual-CD boot-on-next-reset; refusing to reboot')
+         request = {'BootSourceOverrideEnabled': 'Once', 'BootSourceOverrideTarget': 'Cd'}
+         ilo.request('patch', ilo.system_path, {'Boot': request})
+@@ -289,7 +306,7 @@
+     """Prevent mounted installer media from winning the next Windows reboot."""
+     system = ilo.get(ilo.system_path)
+     boot = system.get('Boot', {})
+-    if 'Hdd' not in boot.get('BootSourceOverrideSupported', []):
++    if 'Hdd' not in boot_values(boot, 'BootSourceOverrideTarget', 'BootSourceOverrideSupported'):
+         raise RuntimeError('iLO does not support a one-time hard-disk boot')
+     if (boot.get('BootSourceOverrideEnabled') == 'Once'
+             and boot.get('BootSourceOverrideTarget') == 'Hdd'):

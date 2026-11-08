@@ -1,0 +1,18 @@
+{
+  "app.py": {
+    "original_sha256": "819300f0afe68835235601a8f54210be468e65389d5b6198480bd6e7943fe01d",
+    "replacement_sha256": "21add83619dde8b83b7a8e6c0ca1fa16ed9ad71336bf022c019dd087aa49ded0"
+  },
+  "src/ilo.py": {
+    "original_sha256": "69aa951e180f7407684e76ac546115d823ea1fb7afeb1edf5fb5481952f86e9c",
+    "replacement_sha256": "08fbeaa646a1ddb699263c30386450e9f7d1fe7535ee4b3c45d589c1704b2cfa"
+  },
+  "src/serial_capture.py": {
+    "original_sha256": "7ac359f5a90b7e674a2a241aa3d8bb9f816eea2ceb5b642f98021614c28f5885",
+    "replacement_sha256": "c237416d4ea422638519c026a24b87352cfdbacacef4cc6972e3405b46996845"
+  },
+  "src/virtual_media.py": {
+    "original_sha256": "7c0bb387a0a0f7f787663297c0e9cc09e8d4dd95cf8b6162ff744c24e6d52a52",
+    "replacement_sha256": "652b213c5b78365ca495e813f0d5feabdf0212305e3483ed8b00b7e5327eb6c3"
+  }
+}

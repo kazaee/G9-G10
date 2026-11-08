@@ -1,0 +1,15 @@
+[OK] TCP 443 reachable
+[INFO] TLS verification: False
+[OK] HTTPS endpoint: /redfish/v1/
+[OK] Authentication successful
+[OK] Server: ProLiant DL360 Gen10 Power: Off
+[OK] RAM GiB: 256
+[OK] Manager: iLO 5 Firmware: iLO 5 v3.21
+[OK] Virtual media devices: 2
+[DISK] Samsung SSD 870 EVO 500GB S6P6NL0Y918696N 500 GB SATA SSD
+[DISK] Samsung SSD 870 EVO 500GB S6P6NL0Y919041T 500 GB SATA SSD
+[INFO] Writing customized ISO: generated\discovery.iso
+[OK] ISO seed and UEFI boot entry verified
+[INFO] iLO media URL: http://185.255.88.7:8080/gB4m-ahdMpsmEHFGWzavBq5D/ubuntu.iso
+[OK] Virtual media reports Inserted=true
+[FAIL] iLO does not advertise a virtual-CD boot override

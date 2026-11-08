@@ -1,0 +1,6 @@
+vsp
+Virtual Serial Port Active: COM2
+
+Starting virtual serial port.
+Press 'ESC (' to return to the CLI Session.
+

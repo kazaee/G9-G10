@@ -1,0 +1,2 @@
+PyYAML>=6,<7
+pycdlib>=1.14,<2

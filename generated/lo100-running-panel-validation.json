@@ -1,0 +1,10 @@
+{
+  "stage": "connected",
+  "controller": "lo100",
+  "serial": "USE004N7K2",
+  "media_host": "172.20.224.253",
+  "media_port": 443,
+  "new_panel_loaded": true,
+  "old_os_credentials_required": false,
+  "server_power_requested": false
+}

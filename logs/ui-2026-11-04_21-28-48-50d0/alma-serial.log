@@ -1,0 +1,56 @@
+[VSP] generation=5; terminal=-tt; ssh_port=22
+User:ILO logged-in to 20812.Karen.com(172.20.224.42 / FE80::9640:C9FF:FE32:6E1C)
+Integrated Lights-Out 5
+iLO Advanced 3.21 at  Jul 30 2026
+Server Name: 20812
+Server Power: On
+
+</>hpiLO-> 
+vsp
+
+Virtual Serial Port Active: COM1
+
+Starting virtual serial port.
+Press 'ESC (' to return to the CLI Session.
+
+
+  No offers received matching the 'UEFI HTTP Boot' Policy.
+[2J[01;01H[01;01H>> Booting Embedded FlexibleLOM 1 Port 1 : HPE Ethernet 10Gb 2-port 560FLR-SFP+ Adapter - NIC (PXE IPv4)
+
+>>Start PXE over IPv4.
+  PXE-E18: Server response timeout.
+[2J[01;01H[01;01H>> Booting Embedded FlexibleLOM 1 Port 1 : HPE Ethernet 10Gb 2-port 560FLR-SFP+ Adapter - NIC (HTTP(S) IPv6)
+
+  No offers received matching the 'UEFI HTTP Boot' Policy.
+[2J[01;01H[01;01H>> Booting Embedded FlexibleLOM 1 Port 1 : HPE Ethernet 10Gb 2-port 560FLR-SFP+ Adapter - NIC (PXE IPv6)
+
+>>Start PXE over IPv6.
+  PXE-E16: No offer received.
+[2J[01;01H[2J[01;01H[2J[01;01H[2J[01;01H[1m[37m[40m[0m[37m[40m[1m[37m[40m[0m[37m[40m[1m[37m[40m[0m[37m[40m[1m[37m[40m[0m[37m[40m[21;01HNo bootable devices were detected.
+[22;01HPlease attach a UEFI bootable device.
+For access via BIOS Serial Console:
+Press 'ESC+9' for System Utilities
+Press 'ESC+0' for Intelligent Provisioning
+Press 'ESC+!' for One-Time Boot Menu
+Press 'ESC+@' for Network Boot
+
+[23;01HSystem will automatically retry the UEFI Boot Order in 5 seconds.[23;01HSystem will automatically retry the UEFI Boot Order in 4 seconds.[23;01HSystem will automatically retry the UEFI Boot Order in 3 seconds.[23;01HSystem will automatically retry the UEFI Boot Order in 2 seconds.[23;01HSystem will automatically retry the UEFI Boot Order in 1 seconds.[2J[01;01H[2J[01;01H[2J[01;01H[2J[01;01H[01;01H>> Booting Embedded LOM 1 Port 1 : HPE Ethernet 1Gb 4-port 331i Adapter - NIC (HTTP(S) IPv4)
+
+   No network cable detected.
+[2J[01;01H[01;01H>> Booting Embedded LOM 1 Port 1 : HPE Ethernet 1Gb 4-port 331i Adapter - NIC (PXE IPv4)
+
+   No network cable detected.
+[2J[01;01H[01;01H>> Booting Embedded LOM 1 Port 1 : HPE Ethernet 1Gb 4-port 331i Adapter - NIC (HTTP(S) IPv6)
+
+   No network cable detected.
+[2J[01;01H[01;01H>> Booting Embedded LOM 1 Port 1 : HPE Ethernet 1Gb 4-port 331i Adapter - NIC (PXE IPv6)
+
+   No network cable detected.
+[2J[01;01H[01;01H>> Booting Embedded FlexibleLOM 1 Port 1 : HPE Ethernet 10Gb 2-port 560FLR-SFP+ Adapter - NIC (HTTP(S) IPv4)
+
+  No offers received matching the 'UEFI HTTP Boot' Policy.
+[2J[01;01H[01;01H>> Booting Embedded FlexibleLOM 1 Port 1 : HPE Ethernet 10Gb 2-port 560FLR-SFP+ Adapter - NIC (PXE IPv4)
+
+>>Start PXE over IPv4.
+  PXE-E18: Server response timeout.
+[2J[01;01H[01;01H>> Booting Embedded FlexibleLOM 1 Port 1 : HPE Ethernet 10Gb 2-port 560FLR-SFP+ Adapter - NIC (HTTP(S) IPv6)

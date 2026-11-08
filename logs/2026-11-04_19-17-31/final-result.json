@@ -1,0 +1,5 @@
+{
+  "status": "failed",
+  "error": "Firmware fell back to PXE/HTTP network boot instead of the diagnostic ISO. Check Virtual Media Boot on Next Reset, ISO UEFI bootability, and the media URL from the iLO network. Inspect installer.log HTTP requests and ilo.log boot diagnostics. Discovery has not started; no installation or disk wipe was requested.",
+  "installation": "not-verified"
+}

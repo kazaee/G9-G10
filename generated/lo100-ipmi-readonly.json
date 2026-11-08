@@ -1,0 +1,11 @@
+{
+  "boot_flags": {
+    "raw": "0000000000",
+    "valid": false,
+    "persistent": false,
+    "uefi": false,
+    "device": 0
+  },
+  "read_only": true,
+  "server_power_requested": false
+}

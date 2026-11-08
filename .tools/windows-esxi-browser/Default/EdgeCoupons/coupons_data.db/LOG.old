@@ -1,0 +1,5 @@
+2026/10/04-12:24:20.620 1bd4 Creating DB C:\Users\Administrator\Desktop\ILO-test2\.tools\windows-esxi-browser\Default\EdgeCoupons/coupons_data.db since it was missing.
+2026/10/04-12:24:21.040 1bd4 Reusing MANIFEST C:\Users\Administrator\Desktop\ILO-test2\.tools\windows-esxi-browser\Default\EdgeCoupons/coupons_data.db/MANIFEST-000001
+2026/10/04-12:24:22.759 2958 Level-0 table #5: started
+2026/10/04-12:24:22.773 2958 Level-0 table #5: 683273 bytes OK
+2026/10/04-12:24:22.809 2958 Delete type=0 #3

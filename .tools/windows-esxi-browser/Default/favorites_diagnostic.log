@@ -1,0 +1,31 @@
+2026-10-04 19:24:15.723: [INFO] CurrentProfilePath: C:\Users\Administrator\Desktop\ILO-test2\.tools\windows-esxi-browser\Default
+2026-10-04 19:24:15.723: [INFO] Profiles total count: 1
+2026-10-04 19:24:15.723: [INFO] Profile: name=Profile 1 path=C:\Users\Administrator\Desktop\ILO-test2\.tools\windows-esxi-browser\Default lastActive=null
+2026-10-04 19:24:15.723: [INFO] LastUsedProfileDir: C:\Users\Administrator\Desktop\ILO-test2\.tools\windows-esxi-browser\Default
+2026-10-04 19:24:15.723: [INFO] VisibilityChanged: 0
+2026-10-04 19:24:15.963: [INFO] RecordSyncInitDuration has_sync_been_enabled: 0 state: 0
+2026-10-04 19:24:15.978: [INFO] RecordSyncInitDuration has_sync_been_enabled: 0 state: 0
+2026-10-04 19:24:15.978: [INFO] RecordSyncInitDuration has_sync_been_enabled: 0 state: 0
+2026-10-04 19:24:15.978: [INFO] RecordSyncInitDuration has_sync_been_enabled: 0 state: 0
+2026-10-04 19:24:15.978: [INFO] RecordSyncInitDuration has_sync_been_enabled: 0 state: 0
+2026-10-04 19:24:15.998: [INFO] RecordSyncInitDuration has_sync_been_enabled: 0 state: 0
+2026-10-04 19:24:15.998: [INFO] RecordSyncInitDuration has_sync_been_enabled: 0 state: 0
+2026-10-04 19:24:15.998: [INFO] RecordSyncInitDuration has_sync_been_enabled: 0 state: 0
+2026-10-04 19:24:15.998: [INFO] RecordSyncInitDuration has_sync_been_enabled: 0 state: 0
+2026-10-04 19:24:15.998: [INFO] RecordSyncInitDuration has_sync_been_enabled: 0 state: 0
+2026-10-04 19:24:16.020: [INFO] OnDoneLoading sync enabled: 0
+2026-10-04 19:24:16.020: [INFO] BookmarkModelLoaded, ids_reassigned: 0
+2026-10-04 19:24:16.020: [INFO] BookmarksLoadDropped droppedNodes=0
+2026-10-04 19:24:16.020: [INFO] BookmarksSnapshot Startup total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1
+2026-10-04 19:24:16.198: [INFO] RecordSyncInitDuration has_sync_been_enabled: 0 state: 0
+2026-10-04 19:28:46.397: [INFO] CurrentProfilePath: C:\Users\Administrator\Desktop\ILO-test2\.tools\windows-esxi-browser\Default
+2026-10-04 19:28:46.397: [INFO] Profiles total count: 1
+2026-10-04 19:28:46.397: [INFO] Profile: name=Profile 1 path=C:\Users\Administrator\Desktop\ILO-test2\.tools\windows-esxi-browser\Default lastActive=2026-10-04T19:24:15.949Z
+2026-10-04 19:28:46.397: [INFO] LastUsedProfileDir: C:\Users\Administrator\Desktop\ILO-test2\.tools\windows-esxi-browser\Default
+2026-10-04 19:28:46.397: [INFO] MostRecentlyActiveProfile: name=Profile 1 path=C:\Users\Administrator\Desktop\ILO-test2\.tools\windows-esxi-browser\Default lastActive=2026-10-04T19:24:15.949Z
+2026-10-04 19:28:46.397: [INFO] VisibilityChanged: 0
+2026-10-04 19:28:46.513: [INFO] RecordSyncInitDuration has_sync_been_enabled: 0 state: 0
+2026-10-04 19:28:46.513: [INFO] OnDoneLoading sync enabled: 0
+2026-10-04 19:28:46.513: [INFO] BookmarkModelLoaded, ids_reassigned: 0
+2026-10-04 19:28:46.513: [INFO] BookmarksLoadDropped droppedNodes=0
+2026-10-04 19:28:46.513: [INFO] BookmarksSnapshot Startup total=0 bar=0 other=0 mobile=0 showBar=0 showBarNTP=1

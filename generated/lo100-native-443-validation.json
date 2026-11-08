@@ -1,0 +1,15 @@
+{
+  "port": 443,
+  "tcp_connected": false,
+  "native_handshake": false,
+  "iso_reads": 0,
+  "iso_bytes": 0,
+  "storage_allowed": false,
+  "full_control": false,
+  "control_state_seen": true,
+  "storage_status": 255,
+  "error": null,
+  "mount_channel_verified": false,
+  "failure": "LO100 did not grant native virtual-media control to this session; no ISO share or boot requested. Close an idle Java console normally and retry, or use its manual-media function.",
+  "server_power_requested": false
+}

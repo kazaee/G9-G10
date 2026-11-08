@@ -1,0 +1,32 @@
+{
+  "system": {
+    "name": "DL160(Aspen)    _R",
+    "enabledstate": "enabled"
+  },
+  "manager": {
+    "status": "0",
+    "status_tag": "success",
+    "name": "Hewlett-Packard",
+    "idate": "15-01-2023",
+    "oemhp_serial_number": "USE004N7K2"
+  },
+  "frus": [
+    {
+      "oemhp_description": ""
+    },
+    {
+      "oemhp_description": ""
+    },
+    {
+      "oemhp_description": ""
+    },
+    {
+      "oemhp_description": ""
+    },
+    {
+      "oemhp_description": ""
+    }
+  ],
+  "server_serial": "USE004N7K2",
+  "disk_identifiers_verified": false
+}

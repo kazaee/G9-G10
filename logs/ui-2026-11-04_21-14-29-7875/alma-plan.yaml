@@ -1,0 +1,29 @@
+boot_disk: /dev/disk/by-id/wwn-0x60000d10001cdbb4068e99794bb71223
+boot_mode: uefi
+disks:
+- partitions:
+  - filesystem: fat32
+    flag: boot
+    mount: /boot/efi
+    name: efi
+    size: 1G
+  - filesystem: ext4
+    mount: /boot
+    name: boot
+    size: 2G
+  - filesystem: swap
+    name: swap
+    size: 8G
+  - filesystem: ext4
+    mount: /
+    name: root
+    size: -1
+  path: /dev/disk/by-id/wwn-0x60000d10001cdbb4068e99794bb71223
+  ptable: gpt
+lvm: []
+reason: Prefer non-NVMe SSD/RAID storage for this server; edit disk paths to override
+  after checking firmware boot support.
+untouched:
+- /dev/disk/by-id/ilo-serial-0c3a7cc4dd9dacd3cf9e8f24
+- /dev/disk/by-id/ilo-serial-2cd3c710d5c08d22a29ccbbd
+version: 1

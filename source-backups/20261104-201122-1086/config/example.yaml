@@ -1,0 +1,26 @@
+ilo:
+  address: ''
+  username: ''
+  verify_tls: true
+network:
+  address: ''
+  gateway: ''
+  dns: []
+  hostname: ''
+  domain: ''
+  mac: ''
+identity:
+  username: root
+  ssh_public_key: ''
+  generate_password: true
+  ssh_password_login: true
+  ssh_port: 22
+media:
+  source_iso: ISO/ubuntu-24.04.3-live-server-amd64.iso
+  host: ''
+  port: 8080
+  ram_iso: false
+installation:
+  offline: true
+  rdp_port: 33096
+  serial_log: ''

@@ -1,0 +1,18 @@
+Open local provisioning window: http://127.0.0.1:8765/?token=W0kJDYiN05QL0DzprSIc2nPiwUIPlc_xZWKo_bnBhCg
+[OK] TCP 443 reachable
+[INFO] TLS verification: False
+[OK] TCP 443 reachable
+[INFO] TLS verification: False
+[OK] HTTPS endpoint: /redfish/v1/
+[OK] Authentication successful
+[OK] Server: ProLiant DL360 Gen10 Power: Off
+[OK] RAM GiB: 256
+[OK] Manager: iLO 5 Firmware: iLO 5 v3.21
+[OK] Virtual media devices: 2
+[DISK] Samsung SSD 870 EVO 500GB S6P6NL0Y921080D 500 GB SATA SSD
+[DISK] Samsung SSD 870 EVO 500GB S6P6NL0Y918987D 500 GB SATA SSD
+[OK] TCP 443 reachable
+[INFO] TLS verification: False
+[OK] HTTPS endpoint: /redfish/v1/
+[INFO] BOOT_CAPABILITIES power=Off mode=UEFI targets=['None', 'Cd', 'Hdd', 'Usb', 'SDCard', 'Utilities', 'Diags', 'BiosSetup', 'Pxe', 'UefiShell', 'UefiHttp', 'UefiTarget'] uefi_targets=['UsbClass(0xFFFF,0xFFFF,0xFF,0xFF,0xFF)', 'PciRoot(0x0)/Pci(0x14,0x0)/USB(0x13,0x0)', 'PciRoot(0x0)/Pci(0x1C,0x0)/Pci(0x0,0x0)/MAC(20677CE80D08,0x1)/IPv4(0.0.0.0)/Uri()', 'PciRoot(0x0)/Pci(0x1C,0x0)/Pci(0x0,0x0)/MAC(20677CE80D08,0x1)/IPv6(0000:0000:0000:0000:0000:0000:0000:0000)', 'PciRoot(0x0)/Pci(0x1C,0x0)/Pci(0x0,0x0)/MAC(20677CE80D08,0x1)/IPv6(0000:0000:0000:0000:0000:0000:0000:0000)/Uri()', 'PciRoot(0x0)/Pci(0x1C,0x0)/Pci(0x0,0x0)/MAC(20677CE80D08,0x1)/IPv4(0.0.0.0)', 'PciRoot(0x3)/Pci(0x2,0x0)/Pci(0x0,0x0)/MAC(D4F5EF6D74E8,0x1)/IPv4(0.0.0.0)/Uri()', 'PciRoot(0x3)/Pci(0x2,0x0)/Pci(0x0,0x0)/MAC(D4F5EF6D74E8,0x1)/IPv4(0.0.0.0)', 'PciRoot(0x3)/Pci(0x2,0x0)/Pci(0x0,0x0)/MAC(D4F5EF6D74E8,0x1)/IPv6(0000:0000:0000:0000:0000:0000:0000:0000)/Uri()', 'PciRoot(0x3)/Pci(0x2,0x0)/Pci(0x0,0x0)/MAC(D4F5EF6D74E8,0x1)/IPv6(0000:0000:0000:0000:0000:0000:0000:0000)', 'PciRoot(0x1)/Pci(0x0,0x0)/Pci(0x0,0x0)/NVMe(0x1,68-33-A4-51-45-38-25-00)', 'PciRoot(0x2)/Pci(0x0,0x0)/Pci(0x0,0x0)/NVMe(0x1,BF-AD-A3-51-47-38-25-00)', 'PciRoot(0x3)/Pci(0x0,0x0)/Pci(0x0,0x0)/Scsi(0x17B,0x0)']
+[INFO] Resolved virtual-CD UEFI target: not resolved

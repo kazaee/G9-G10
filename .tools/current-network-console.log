@@ -1,0 +1,21 @@
+User:ILO logged-in to ILOHZ75NU7565.(193.141.127.2 / FE80::32E1:71FF:FE67:BD8A)
+
+iLO Advanced 2.81 at  Jul 27 2022
+Server Name: localhost
+Server Power: On
+
+</>hpiLO-> 
+vsp
+
+Virtual Serial Port Active: COM2
+
+Starting virtual serial port.
+Press 'ESC (' to return to the CLI Session.
+
+
+ubuntu-test login: 
+ubuntu-test login: provision
+Password: 
+
+Login incorrect
+ubuntu-test login: 

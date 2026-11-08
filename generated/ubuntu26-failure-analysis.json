@@ -1,0 +1,34 @@
+{
+  "kernel_crashes": [
+    {
+      "line": 3031,
+      "detail": [
+        "[  737.469787] BUG: unable to handle page fault for address: ffffffffd9f7d050",
+        "[  737.473204] CPU: 10 UID: 0 PID: 3324 Comm: ubuntu-drivers Not tainted 7.0.0-14-generic #14-Ubuntu PREEMPT(lazy)",
+        "[  737.474528] Hardware name: HP ProLiant DL360 Gen9/ProLiant DL360 Gen9, BIOS P89 01/22/2018",
+        "[  737.475243] RIP: 0010:ovl_iterate_merged+0x1d8/0x2b0 [overlay]"
+      ]
+    },
+    {
+      "line": 3181,
+      "detail": [
+        "[  805.354840] BUG: unable to handle page fault for address: ffffffffd9f7d050",
+        "[  805.373626] CPU: 17 UID: 0 PID: 5868 Comm: rsync Tainted: P      D    O        7.0.0-14-generic #14-Ubuntu PREEMPT(lazy)",
+        "[  805.376315] Hardware name: HP ProLiant DL360 Gen9/ProLiant DL360 Gen9, BIOS P89 01/22/2018",
+        "[  805.377614] RIP: 0010:ovl_iterate_merged+0x1d8/0x2b0 [overlay]"
+      ]
+    }
+  ],
+  "media": {
+    "requests": 1716,
+    "requested_bytes": 862310912,
+    "http_errors": 0
+  },
+  "run": "2026-10-03_09-15-52",
+  "run_id": "d9cd3369e1f4d576da6bb1124f872af4",
+  "iso": "ubuntu-26.04-live-server-amd64.iso",
+  "iso_sha256": "dec49008a71f6098d0bcfc822021f4d042d5f2db279e4d75bdd981304f1ca5d9",
+  "official_sha256_match": true,
+  "installer_stage": "curtin extract",
+  "installation_verified": false
+}

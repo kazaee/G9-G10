@@ -1,0 +1,147 @@
+#cloud-config
+autoinstall:
+  version: 1
+  refresh-installer:
+    update: false
+  locale: en_US.UTF-8
+  keyboard:
+    layout: us
+  identity:
+    hostname: ubuntu-test
+    username: provision
+    password: $6$0Gpat3adBoOWRr.u$CgRkav/ujq2cshzEkEEIiGLzCFhR1KyGWrmor0dnmnSUvDiuliXajxkX6v46mA/41i2VSC2QSRGyXXWmd6zxY/
+  network:
+    version: 2
+    ethernets:
+      management:
+        match:
+          macaddress: 8c:dc:d4:b7:e3:09
+        optional: true
+        dhcp4: false
+        dhcp6: false
+        addresses:
+        - 193.141.127.102/24
+        routes:
+        - to: default
+          via: 193.141.127.254
+        nameservers:
+          addresses:
+          - 4.2.2.4
+  ssh:
+    install-server: true
+    allow-pw: true
+    authorized-keys:
+    - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINgyvbK7MgpsQd4Qbpj0mbTnYO92Rekd7Mris5VZ0jUO
+      ilo-test-provisioner
+  storage:
+    config:
+    - id: disk-0
+      type: disk
+      path: /dev/disk/by-id/wwn-0x600508b1001c6d005714f698ca5f0135
+      ptable: gpt
+      wipe: superblock-recursive
+      preserve: false
+      grub_device: false
+    - id: disk-0-efi
+      type: partition
+      device: disk-0
+      number: 1
+      size: 1073741824
+      preserve: false
+      wipe: superblock
+      flag: boot
+      grub_device: true
+    - id: disk-0-efi-format
+      type: format
+      volume: disk-0-efi
+      fstype: fat32
+      preserve: false
+    - id: disk-0-boot
+      type: partition
+      device: disk-0
+      number: 2
+      size: 2147483648
+      preserve: false
+      wipe: superblock
+    - id: disk-0-boot-format
+      type: format
+      volume: disk-0-boot
+      fstype: ext4
+      preserve: false
+    - id: disk-0-swap
+      type: partition
+      device: disk-0
+      number: 3
+      size: 17179869184
+      preserve: false
+      wipe: superblock
+    - id: disk-0-swap-format
+      type: format
+      volume: disk-0-swap
+      fstype: swap
+      preserve: false
+    - id: disk-0-backup
+      type: partition
+      device: disk-0
+      number: 4
+      size: -1
+      preserve: false
+      wipe: superblock
+    - id: disk-0-backup-format
+      type: format
+      volume: disk-0-backup
+      fstype: ext4
+      preserve: false
+    - id: disk-1
+      type: disk
+      path: /dev/disk/by-id/wwn-0x600508b1001cb60bf3476b74719bc055
+      ptable: gpt
+      wipe: superblock-recursive
+      preserve: false
+      grub_device: false
+    - id: disk-1-root
+      type: partition
+      device: disk-1
+      number: 1
+      size: -1
+      preserve: false
+      wipe: superblock
+    - id: disk-1-root-format
+      type: format
+      volume: disk-1-root
+      fstype: ext4
+      preserve: false
+    - id: disk-0-swap-mount
+      type: mount
+      device: disk-0-swap-format
+      path: ''
+    - id: disk-1-root-mount
+      type: mount
+      device: disk-1-root-format
+      path: /
+    - id: disk-0-backup-mount
+      type: mount
+      device: disk-0-backup-format
+      path: /backup
+    - id: disk-0-boot-mount
+      type: mount
+      device: disk-0-boot-format
+      path: /boot
+    - id: disk-0-efi-mount
+      type: mount
+      device: disk-0-efi-format
+      path: /boot/efi
+    swap:
+      size: 0
+  apt:
+    geoip: false
+    fallback: offline-install
+    mirror-selection:
+      primary: []
+  early-commands:
+  - python3 /cdrom/install_hook.py preflight
+  late-commands:
+  - python3 /cdrom/install_hook.py complete
+  error-commands:
+  - python3 /cdrom/install_hook.py failed
+  shutdown: reboot

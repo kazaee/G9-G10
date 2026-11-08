@@ -1,0 +1,4 @@
+https://github.com/pedrotei/ilo-console
+MIT Copyright (c) 2026 Pedro Teixeira
+Reviewed reference: protocol.py blob 4f9f7be1c3e75175bea70cd6385042ea03d13c7b; vmedia100.py blob d5d21f0edfb7f6e03c38927373a1407248e12fb7.
+These codecs are an unofficial protocol implementation. The integrating adapter treats connection/handshake/read/boot as separate evidence and fails closed before power changes.

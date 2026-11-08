@@ -1,0 +1,12 @@
+{
+  "target": "172.20.224.30",
+  "media_host": "172.20.224.253",
+  "port": 443,
+  "status": "inconclusive",
+  "callback_observed": false,
+  "boot_requested": false,
+  "protocol": "LO100 native TCP; not HTTP/HTTPS",
+  "image_selected": false,
+  "handshake_flags": "KVM",
+  "reason": "no-callback; firewall, native-storage-permission and request-acceptance are not distinguished"
+}

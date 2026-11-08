@@ -1,0 +1,15 @@
+# Exclude ISO directory completely
+ISO/
+
+# Exclude contents of specific directories inside generated
+/generated/lo100-diagnostic-validation/*
+/generated/lo100-g6-ubuntu24/*
+
+# Keep the directories themselves
+!/generated/lo100-diagnostic-validation/
+/generated/lo100-g6-ubuntu24/
+
+# Exclude specific ISO files
+/generated/discovery.iso
+/generated/ubuntu-autoinstall.iso
+/generated/ubuntu-autoinstall.superseded.iso

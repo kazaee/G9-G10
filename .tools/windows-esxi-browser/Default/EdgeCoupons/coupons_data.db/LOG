@@ -1,0 +1,6 @@
+2026/10/04-12:28:50.795 32e8 Reusing MANIFEST C:\Users\Administrator\Desktop\ILO-test2\.tools\windows-esxi-browser\Default\EdgeCoupons/coupons_data.db/MANIFEST-000001
+2026/10/04-12:28:50.803 32e8 Recovering log #4
+2026/10/04-12:28:50.803 32e8 Reusing old log C:\Users\Administrator\Desktop\ILO-test2\.tools\windows-esxi-browser\Default\EdgeCoupons/coupons_data.db/000004.log 
+2026/10/04-12:28:51.311 1e78 Level-0 table #8: started
+2026/10/04-12:28:51.358 1e78 Level-0 table #8: 683376 bytes OK
+2026/10/04-12:28:51.358 1e78 Delete type=0 #4

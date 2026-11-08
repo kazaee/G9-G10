@@ -1,0 +1,86 @@
+<meta http-equiv="X-UA-Compatible" content="IE=7" />
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Expires" content="-1" >
+<meta http-equiv="Pragma" content="no-cache" >
+<meta http-equiv="Cache-Control" content="no-cache" >
+<title>BMC HTTP Server</title>
+<link rel="stylesheet" href="style.css" media="screen" type="text/css">
+<script type='text/javascript' language='JavaScript'>
+<!--
+function confirmation () {
+   var choice = confirm('<P class="textstyle">Clicking this button will close the Virtual KVM/Media and the current window for security reasons. Do you want to proceed?</P>')
+
+   if (choice) {
+      return true;
+   }
+
+   return false;
+}
+//-->
+</script>
+</head>
+<body>
+<table class="layer1">
+      <tr><td><img src="lights-out100_rgb.jpg" class="mainlogo" alt=""></td>
+      <td class="logoutpane"><a href="loggedout.html"><font class="logonfont">Log Out</font></a></td></tr>
+      <table class="layer2">
+         <table class="layer3">
+            <table class="layer4">
+               <tr>
+                  <td class="menualignment">
+                  <div class="divmenu">
+                  <table class="menutable">
+                     <tr><td><font class="menu"><a href="index.html">Summary</a></font></td></tr>
+                     <tr><td><font class="menu"><a href="chassis.html">Virtual Power</a></font></td></tr>
+                     <tr><td><font class="menu"><a href="sensors.html">Monitoring Sensors</a></font></td></tr>
+                     <tr><td><font class="menu"><a href="sel.html">System Event Log</a></font></td></tr>
+                  </table>
+                  <table class="selectedmenu">
+                     <tr class="VirtualKVMStyle"><td><font class="menu"><a href="kvms.html">Virtual KVM/Media</a></font></td></tr>
+                     <tr class="VirtualKVMStorageOnly"><td><font class="menu"><a href="kvms.html">Virtual Media</a></font></td></tr>
+                  </table>
+                  <table class="menutable">
+                     <tr class="VirtualStorageStyle"><td><font class="menu"><a href="vstorage.html">Virtual Storage</a></font></td></tr>
+                     <tr><td><font class="menu"><a href="hwinv.html">Hardware Inventory</a></font></td></tr>
+                     <tr><td><font class="menu"><a href="user.html">User Administration</a></font></td></tr>
+                     <tr><td><font class="menu"><a href="lan.html">Network Settings</a></font></td></tr>
+                     <tr><td><font class="menu"><a href="pet.html">IPMI PET Configuration</a></font></td></tr>
+                     <tr class="LkeyStyle"><td><font class="menu"><a href="lkey.html">Application License Key</a></font></td></tr>
+                     <tr class="SadminStyle" ><td><font class="menu"><a href="sAdmin.html">Security Settings</a></font></td></tr>
+                     <tr class="FWDownloadStyle"><td><font class="menu"><a href="fwdownload.html">Firmware Download</a></font></td></tr>
+                     <tr><td></td></tr>
+                  </table>
+                  </div>
+                  </td>
+                  <td class="datatyle">
+                  <table class="layer5">
+                     <tr><td class="pagetitle">
+                       <table class="pagetitletable">
+                       <tr><td class="pagetitle"><font class="pagetitlefont">Virtual KVM/Media (LO100 Integrated Remote Console)</font></td></tr>
+                       </table>
+                     </td></tr>
+                     <tr><td><p class="textstyle">Warning: Leaving this page will close the Virtual KVM/Media Viewer.
+                             To synchronize mouse, move pointer to upper left corner of screen. Consult Lights-Out 100 User 
+                             Guide for more mouse synchronization tips.
+                             </p>
+                     </td></tr>
+                     <tr><td>
+                        <APPLET CODE="com.serverengines.mahogany.MahoganyViewer.class" mayscript="true"ARCHIVE = "M2.JAR" WIDTH="400" HEIGHT="250"alt="JavaScript has been disabled or is not supported by your web browser which is needed by the Virtual KVM/Media applet. Please correct this problem."><PARAM NAME="NonSecure_KVMPort" VALUE="80"> <PARAM NAME="sessiontype" VALUE="kvm" ><PARAM NAME="port" VALUE="5901" > <PARAM NAME="ipaddress" VALUE="172.20.224.30" > <PARAM NAME="sessiontype" VALUE="kvm" ><PARAM NAME="httpdata" VALUE="E4250903057877451C87194071F64E9B1BF19FA7576A7CEE53EAD3C32FADAB7CE508CA63213CF42C7BA62C9E09BD2943" > <PARAM NAME="username" VALUE="ILO" ><BR><p class="errorcolor">JavaScript has been disabled or is not supported by your web browser which is needed by the Virtual KVM/Media applet. Please correct this problem.</p></APPLET>
+                        <noscript>
+                        <tr><td></td></tr>
+                        <p class="errorcolor" class="textstyle">JavaScript has been disabled or is not supported by 
+                         your web browser which is needed by the Virtual KVM/Media applet. Please correct this problem. 
+                        </p>
+                        </noscript>
+                     </td></tr>
+                  </table>
+                  </td>
+               </tr>
+            </table>
+         </table>
+      </table>
+</table>
+</body>
+</html>

@@ -1,0 +1,5 @@
+{
+  "status": "failed",
+  "error": "iLO does not advertise a virtual-CD boot override",
+  "installation": "not-verified"
+}

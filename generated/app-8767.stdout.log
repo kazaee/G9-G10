@@ -1,0 +1,13 @@
+Open local provisioning window: http://127.0.0.1:8767/?token=tpVhnQBIcCUdc8k09jSWj24oCGmEw6udTJjQ67dxPfw
+[OK] TCP 443 reachable
+[INFO] TLS verification: False
+[OK] HTTPS endpoint: /redfish/v1/
+[OK] Authentication successful
+[OK] Server: ProLiant DL360 Gen9 Power: On
+[OK] RAM GiB: 128
+[OK] Manager: None Firmware: iLO 4 v2.81
+[OK] Virtual media devices: 2
+[DISK] Samsung S3Z8NB1KB89257J 1000 GB SATA SSD
+[DISK] Samsung S3Z8NB1KB88224D 1000 GB SATA SSD
+[DISK] WDC VBG2DDAR 4000 GB SATA HDD
+[DISK] WDC VBG2UVAR 4000 GB SATA HDD

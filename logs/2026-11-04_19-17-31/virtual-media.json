@@ -1,0 +1,42 @@
+{
+  "@odata.context": "/redfish/v1/$metadata#VirtualMedia.VirtualMedia",
+  "@odata.etag": "W/\"4DC99130\"",
+  "@odata.id": "/redfish/v1/Managers/1/VirtualMedia/2/",
+  "@odata.type": "#VirtualMedia.v1_3_0.VirtualMedia",
+  "Id": "2",
+  "Actions": {
+    "#VirtualMedia.EjectMedia": {
+      "target": "/redfish/v1/Managers/1/VirtualMedia/2/Actions/VirtualMedia.EjectMedia/"
+    },
+    "#VirtualMedia.InsertMedia": {
+      "target": "/redfish/v1/Managers/1/VirtualMedia/2/Actions/VirtualMedia.InsertMedia/"
+    }
+  },
+  "ConnectedVia": "URI",
+  "Description": "Virtual Removable Media",
+  "Image": "http://185.255.88.7:8080/HOGy15vd3Wp-NAu4f7d3zxoP/ubuntu.iso",
+  "ImageName": "ubuntu.iso",
+  "Inserted": true,
+  "MediaTypes": [
+    "CD",
+    "DVD"
+  ],
+  "Name": "VirtualMedia",
+  "Oem": {
+    "Hpe": {
+      "@odata.context": "/redfish/v1/$metadata#HpeiLOVirtualMedia.HpeiLOVirtualMedia",
+      "@odata.type": "#HpeiLOVirtualMedia.v2_2_0.HpeiLOVirtualMedia",
+      "Actions": {
+        "#HpeiLOVirtualMedia.EjectVirtualMedia": {
+          "target": "/redfish/v1/Managers/1/VirtualMedia/2/Actions/Oem/Hpe/HpeiLOVirtualMedia.EjectVirtualMedia/"
+        },
+        "#HpeiLOVirtualMedia.InsertVirtualMedia": {
+          "target": "/redfish/v1/Managers/1/VirtualMedia/2/Actions/Oem/Hpe/HpeiLOVirtualMedia.InsertVirtualMedia/"
+        }
+      },
+      "BootOnNextServerReset": false
+    }
+  },
+  "TransferProtocolType": "HTTP",
+  "WriteProtected": true
+}

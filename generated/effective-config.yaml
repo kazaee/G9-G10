@@ -1,0 +1,29 @@
+ilo:
+  address: 193.141.127.2
+  username: ILO
+  verify_tls: false
+network:
+  address: 193.141.127.102/24
+  gateway: 193.141.127.254
+  dns:
+  - 4.2.2.4
+  hostname: ubuntu-test
+  domain: ''
+  mac: 8c:dc:d4:b7:e3:09
+identity:
+  username: provision
+  ssh_public_key: ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINgyvbK7MgpsQd4Qbpj0mbTnYO92Rekd7Mris5VZ0jUO
+    ilo-test-provisioner
+  generate_password: true
+  ssh_password_login: true
+  password_hash: $6$0Gpat3adBoOWRr.u$CgRkav/ujq2cshzEkEEIiGLzCFhR1KyGWrmor0dnmnSUvDiuliXajxkX6v46mA/41i2VSC2QSRGyXXWmd6zxY/
+  ssh_private_key: generated\provision.key
+media:
+  source_iso: C:\Users\Administrator\Desktop\ILO-test2\ISO\ubuntu-24.04.3-live-server-amd64.iso
+  host: 185.255.88.7
+  port: 8080
+  ram_iso: false
+installation:
+  offline: true
+  serial_log: logs\ui-2026-10-08_12-07-41-b5a3\serial.log
+  os: ubuntu24

@@ -1,0 +1,16 @@
+[VSP] generation=5; terminal=-tt; ssh_port=22
+User:ILO logged-in to 20835.Karen.com(172.20.224.38 / FE80::9640:C9FF:FE36:9176)
+Integrated Lights-Out 5
+iLO Advanced 3.21 at  Jul 30 2026
+Server Name: 20835
+Server Power: Off
+
+</>hpiLO-> 
+vsp
+
+Virtual Serial Port Active: COM1
+ The server is not powered on.  The Virtual Serial Port is not available.
+
+Starting virtual serial port.
+Press 'ESC (' to return to the CLI Session.
+

@@ -1,0 +1,205 @@
+{
+  "media_host": "172.20.224.253",
+  "media_port": 8080,
+  "ilo_to_media_connectivity": "unverified",
+  "errors": [],
+  "jump_host_route_source": "172.20.224.253",
+  "route_source_is_loopback": false,
+  "power": "On",
+  "boot": {
+    "BootOptions": {
+      "@odata.id": "/redfish/v1/Systems/1/BootOptions/"
+    },
+    "BootOrder": [
+      "Boot000A",
+      "Boot000C",
+      "Boot000D",
+      "Boot000F",
+      "Boot000E",
+      "Boot0010",
+      "Boot0012",
+      "Boot0014",
+      "Boot0013",
+      "Boot0015",
+      "Boot0016",
+      "Boot0017",
+      "Boot000B",
+      "Boot0011"
+    ],
+    "BootSourceOverrideEnabled": "Disabled",
+    "BootSourceOverrideMode": "UEFI",
+    "BootSourceOverrideTarget": "None",
+    "BootSourceOverrideTarget@Redfish.AllowableValues": [
+      "None",
+      "Cd",
+      "Hdd",
+      "Usb",
+      "SDCard",
+      "Utilities",
+      "Diags",
+      "BiosSetup",
+      "Pxe",
+      "UefiShell",
+      "UefiHttp",
+      "UefiTarget"
+    ],
+    "UefiTargetBootSourceOverride": "None",
+    "UefiTargetBootSourceOverride@Redfish.AllowableValues": [
+      "UsbClass(0xFFFF,0xFFFF,0xFF,0xFF,0xFF)",
+      "PciRoot(0x0)/Pci(0x14,0x0)/USB(0x13,0x0)",
+      "PciRoot(0x0)/Pci(0x1C,0x0)/Pci(0x0,0x0)/MAC(08F1EA7DBFC8,0x1)/IPv4(0.0.0.0)/Uri()",
+      "PciRoot(0x0)/Pci(0x1C,0x0)/Pci(0x0,0x0)/MAC(08F1EA7DBFC8,0x1)/IPv4(0.0.0.0)",
+      "PciRoot(0x0)/Pci(0x1C,0x0)/Pci(0x0,0x0)/MAC(08F1EA7DBFC8,0x1)/IPv6(0000:0000:0000:0000:0000:0000:0000:0000)/Uri()",
+      "PciRoot(0x0)/Pci(0x1C,0x0)/Pci(0x0,0x0)/MAC(08F1EA7DBFC8,0x1)/IPv6(0000:0000:0000:0000:0000:0000:0000:0000)",
+      "PciRoot(0x3)/Pci(0x2,0x0)/Pci(0x0,0x0)/MAC(D4F5EF74CE24,0x1)/IPv4(0.0.0.0)/Uri()",
+      "PciRoot(0x3)/Pci(0x2,0x0)/Pci(0x0,0x0)/MAC(D4F5EF74CE24,0x1)/IPv4(0.0.0.0)",
+      "PciRoot(0x3)/Pci(0x2,0x0)/Pci(0x0,0x0)/MAC(D4F5EF74CE24,0x1)/IPv6(0000:0000:0000:0000:0000:0000:0000:0000)/Uri()",
+      "PciRoot(0x3)/Pci(0x2,0x0)/Pci(0x0,0x0)/MAC(D4F5EF74CE24,0x1)/IPv6(0000:0000:0000:0000:0000:0000:0000:0000)",
+      "PciRoot(0x1)/Pci(0x0,0x0)/Pci(0x0,0x0)/NVMe(0x1,61-33-A4-51-45-38-25-00)",
+      "PciRoot(0x2)/Pci(0x0,0x0)/Pci(0x0,0x0)/NVMe(0x1,5C-AE-A3-51-47-38-25-00)",
+      "PciRoot(0x3)/Pci(0x0,0x0)/Pci(0x0,0x0)/Scsi(0x17B,0x0)",
+      "PciRoot(0x0)/Pci(0x1C,0x4)/Pci(0x0,0x4)/USB(0x1,0x0)"
+    ]
+  },
+  "media": [
+    {
+      "Id": "1",
+      "Name": "VirtualMedia",
+      "MediaTypes": [
+        "Floppy",
+        "USBStick"
+      ],
+      "Inserted": false,
+      "ConnectedVia": "NotConnected",
+      "WriteProtected": true,
+      "image_configured": false,
+      "boot_on_next_reset": {},
+      "path": "/redfish/v1/Managers/1/VirtualMedia/1/"
+    },
+    {
+      "Id": "2",
+      "Name": "VirtualMedia",
+      "MediaTypes": [
+        "CD",
+        "DVD"
+      ],
+      "Inserted": true,
+      "ConnectedVia": "URI",
+      "WriteProtected": true,
+      "image_configured": true,
+      "boot_on_next_reset": {
+        "Hpe": true
+      },
+      "path": "/redfish/v1/Managers/1/VirtualMedia/2/"
+    }
+  ],
+  "bios": {
+    "BootMode": "Uefi",
+    "SerialConsoleBaudRate": "BaudRate115200",
+    "SerialConsolePort": "Auto",
+    "UefiOptimizedBoot": "Enabled",
+    "UsbBoot": "Enabled",
+    "UsbControl": "UsbEnabled",
+    "VirtualInstallDisk": "Disabled"
+  },
+  "boot_sources": [
+    {
+      "BootOptionNumber": "000A",
+      "BootString": "Generic USB Boot",
+      "CorrelatableID": "UsbClass(0xFFFF,0xFFFF,0xFF,0xFF,0xFF)",
+      "StructuredBootString": "Generic.USB.1.1",
+      "UEFIDevicePath": "UsbClass(0xFFFF,0xFFFF,0xFF,0xFF,0xFF)"
+    },
+    {
+      "BootOptionNumber": "000C",
+      "BootString": "Internal SD Card 1 : Generic USB3.0-CRW",
+      "CorrelatableID": "PciRoot(0x0)/Pci(0x14,0x0)/USB(0x13,0x0)",
+      "StructuredBootString": "HD.SD.1.2",
+      "UEFIDevicePath": "PciRoot(0x0)/Pci(0x14,0x0)/USB(0x13,0x0)"
+    },
+    {
+      "BootOptionNumber": "000D",
+      "BootString": "Embedded LOM 1 Port 1 : HPE Ethernet 1Gb 4-port 331i Adapter - NIC (HTTP(S) IPv4)",
+      "CorrelatableID": "PciRoot(0x0)/Pci(0x1C,0x0)/Pci(0x0,0x0)",
+      "StructuredBootString": "NIC.LOM.1.1.Httpv4",
+      "UEFIDevicePath": "PciRoot(0x0)/Pci(0x1C,0x0)/Pci(0x0,0x0)/MAC(08F1EA7DBFC8,0x1)/IPv4(0.0.0.0,0x0,DHCP,0.0.0.0,0.0.0.0,0.0.0.0)/Uri()"
+    },
+    {
+      "BootOptionNumber": "000F",
+      "BootString": "Embedded LOM 1 Port 1 : HPE Ethernet 1Gb 4-port 331i Adapter - NIC (PXE IPv4)",
+      "CorrelatableID": "PciRoot(0x0)/Pci(0x1C,0x0)/Pci(0x0,0x0)",
+      "StructuredBootString": "NIC.LOM.1.1.IPv4",
+      "UEFIDevicePath": "PciRoot(0x0)/Pci(0x1C,0x0)/Pci(0x0,0x0)/MAC(08F1EA7DBFC8,0x1)/IPv4(0.0.0.0,0x0,DHCP,0.0.0.0,0.0.0.0,0.0.0.0)"
+    },
+    {
+      "BootOptionNumber": "000E",
+      "BootString": "Embedded LOM 1 Port 1 : HPE Ethernet 1Gb 4-port 331i Adapter - NIC (HTTP(S) IPv6)",
+      "CorrelatableID": "PciRoot(0x0)/Pci(0x1C,0x0)/Pci(0x0,0x0)",
+      "StructuredBootString": "NIC.LOM.1.1.Httpv6",
+      "UEFIDevicePath": "PciRoot(0x0)/Pci(0x1C,0x0)/Pci(0x0,0x0)/MAC(08F1EA7DBFC8,0x1)/IPv6(0000:0000:0000:0000:0000:0000:0000:0000,0x0,Static,0000:0000:0000:0000:0000:0000:0000:0000,0x40,0000:0000:0000:0000:0000:0000:0000:0000)/Uri()"
+    },
+    {
+      "BootOptionNumber": "0010",
+      "BootString": "Embedded LOM 1 Port 1 : HPE Ethernet 1Gb 4-port 331i Adapter - NIC (PXE IPv6)",
+      "CorrelatableID": "PciRoot(0x0)/Pci(0x1C,0x0)/Pci(0x0,0x0)",
+      "StructuredBootString": "NIC.LOM.1.1.IPv6",
+      "UEFIDevicePath": "PciRoot(0x0)/Pci(0x1C,0x0)/Pci(0x0,0x0)/MAC(08F1EA7DBFC8,0x1)/IPv6(0000:0000:0000:0000:0000:0000:0000:0000,0x0,Static,0000:0000:0000:0000:0000:0000:0000:0000,0x40,0000:0000:0000:0000:0000:0000:0000:0000)"
+    },
+    {
+      "BootOptionNumber": "0012",
+      "BootString": "Embedded FlexibleLOM 1 Port 1 : HPE Ethernet 10Gb 2-port 560FLR-SFP+ Adapter - NIC (HTTP(S) IPv4)",
+      "CorrelatableID": "PciRoot(0x3)/Pci(0x2,0x0)/Pci(0x0,0x0)",
+      "StructuredBootString": "NIC.FlexLOM.1.1.Httpv4",
+      "UEFIDevicePath": "PciRoot(0x3)/Pci(0x2,0x0)/Pci(0x0,0x0)/MAC(D4F5EF74CE24,0x1)/IPv4(0.0.0.0,0x0,DHCP,0.0.0.0,0.0.0.0,0.0.0.0)/Uri()"
+    },
+    {
+      "BootOptionNumber": "0014",
+      "BootString": "Embedded FlexibleLOM 1 Port 1 : HPE Ethernet 10Gb 2-port 560FLR-SFP+ Adapter - NIC (PXE IPv4)",
+      "CorrelatableID": "PciRoot(0x3)/Pci(0x2,0x0)/Pci(0x0,0x0)",
+      "StructuredBootString": "NIC.FlexLOM.1.1.IPv4",
+      "UEFIDevicePath": "PciRoot(0x3)/Pci(0x2,0x0)/Pci(0x0,0x0)/MAC(D4F5EF74CE24,0x1)/IPv4(0.0.0.0,0x0,DHCP,0.0.0.0,0.0.0.0,0.0.0.0)"
+    },
+    {
+      "BootOptionNumber": "0013",
+      "BootString": "Embedded FlexibleLOM 1 Port 1 : HPE Ethernet 10Gb 2-port 560FLR-SFP+ Adapter - NIC (HTTP(S) IPv6)",
+      "CorrelatableID": "PciRoot(0x3)/Pci(0x2,0x0)/Pci(0x0,0x0)",
+      "StructuredBootString": "NIC.FlexLOM.1.1.Httpv6",
+      "UEFIDevicePath": "PciRoot(0x3)/Pci(0x2,0x0)/Pci(0x0,0x0)/MAC(D4F5EF74CE24,0x1)/IPv6(0000:0000:0000:0000:0000:0000:0000:0000,0x0,Static,0000:0000:0000:0000:0000:0000:0000:0000,0x40,0000:0000:0000:0000:0000:0000:0000:0000)/Uri()"
+    },
+    {
+      "BootOptionNumber": "0015",
+      "BootString": "Embedded FlexibleLOM 1 Port 1 : HPE Ethernet 10Gb 2-port 560FLR-SFP+ Adapter - NIC (PXE IPv6)",
+      "CorrelatableID": "PciRoot(0x3)/Pci(0x2,0x0)/Pci(0x0,0x0)",
+      "StructuredBootString": "NIC.FlexLOM.1.1.IPv6",
+      "UEFIDevicePath": "PciRoot(0x3)/Pci(0x2,0x0)/Pci(0x0,0x0)/MAC(D4F5EF74CE24,0x1)/IPv6(0000:0000:0000:0000:0000:0000:0000:0000,0x0,Static,0000:0000:0000:0000:0000:0000:0000:0000,0x40,0000:0000:0000:0000:0000:0000:0000:0000)"
+    },
+    {
+      "BootOptionNumber": "0016",
+      "BootString": "Slot 1 NVMe Drive 1 : NVM Express Controller - S7HENU2Y506557Z-Samsung SSD 990 PRO 2TB-45382500",
+      "CorrelatableID": "PciRoot(0x1)/Pci(0x0,0x0)/Pci(0x0,0x0)",
+      "StructuredBootString": "NVMe.Unknown.1.1",
+      "UEFIDevicePath": "PciRoot(0x1)/Pci(0x0,0x0)/Pci(0x0,0x0)/NVMe(0x1,61-33-A4-51-45-38-25-00)"
+    },
+    {
+      "BootOptionNumber": "0017",
+      "BootString": "Slot 2 NVMe Drive 1 : NVM Express Controller - S7HENU0Y741905Z-Samsung SSD 990 PRO 2TB-47382500",
+      "CorrelatableID": "PciRoot(0x2)/Pci(0x0,0x0)/Pci(0x0,0x0)",
+      "StructuredBootString": "NVMe.Unknown.1.1",
+      "UEFIDevicePath": "PciRoot(0x2)/Pci(0x0,0x0)/Pci(0x0,0x0)/NVMe(0x1,5C-AE-A3-51-47-38-25-00)"
+    },
+    {
+      "BootOptionNumber": "000B",
+      "BootString": "Embedded RAID 1 : HPE Smart Array P408i-a SR Gen10 - 465.73 GiB, RAID1 Logical Drive 1(Target:379, Lun:0)",
+      "CorrelatableID": "PciRoot(0x3)/Pci(0x0,0x0)/Pci(0x0,0x0)",
+      "StructuredBootString": "HD.EmbRAID.1.2",
+      "UEFIDevicePath": "PciRoot(0x3)/Pci(0x0,0x0)/Pci(0x0,0x0)/Scsi(0x17B,0x0)"
+    },
+    {
+      "BootOptionNumber": "0011",
+      "BootString": "iLO Virtual USB 3 : iLO Virtual CD-ROM",
+      "CorrelatableID": "PciRoot(0x0)/Pci(0x1C,0x4)/Pci(0x0,0x4)/USB(0x1,0x0)",
+      "StructuredBootString": "CD.Virtual.3.1",
+      "UEFIDevicePath": "PciRoot(0x0)/Pci(0x1C,0x4)/Pci(0x0,0x4)/USB(0x1,0x0)"
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+GET /redfish/v1/Systems/1/ -> 200
+GET /redfish/v1/Managers/1/VirtualMedia/2/ -> 200
+GET /redfish/v1/Managers/1/VirtualMedia/1/ -> 200
+GET /redfish/v1/Managers/1/VirtualMedia/2/ -> 200
+GET /redfish/v1/Managers/1/VirtualMedia/2/ -> 200
+GET /redfish/v1/Systems/1/ -> 200
+GET /redfish/v1/systems/1/bios/ -> 200
+GET /redfish/v1/systems/1/bios/boot/ -> 200
+BOOT_CAPABILITIES power=Off mode=UEFI targets=['None', 'Cd', 'Hdd', 'Usb', 'SDCard', 'Utilities', 'Diags', 'BiosSetup', 'Pxe', 'UefiShell', 'UefiHttp', 'UefiTarget'] uefi_targets=['UsbClass(0xFFFF,0xFFFF,0xFF,0xFF,0xFF)', 'PciRoot(0x0)/Pci(0x14,0x0)/USB(0x13,0x0)', 'PciRoot(0x0)/Pci(0x1C,0x0)/Pci(0x0,0x0)/MAC(20677CE80D08,0x1)/IPv4(0.0.0.0)/Uri()', 'PciRoot(0x0)/Pci(0x1C,0x0)/Pci(0x0,0x0)/MAC(20677CE80D08,0x1)/IPv6(0000:0000:0000:0000:0000:0000:0000:0000)', 'PciRoot(0x0)/Pci(0x1C,0x0)/Pci(0x0,0x0)/MAC(20677CE80D08,0x1)/IPv6(0000:0000:0000:0000:0000:0000:0000:0000)/Uri()', 'PciRoot(0x0)/Pci(0x1C,0x0)/Pci(0x0,0x0)/MAC(20677CE80D08,0x1)/IPv4(0.0.0.0)', 'PciRoot(0x3)/Pci(0x2,0x0)/Pci(0x0,0x0)/MAC(D4F5EF6D74E8,0x1)/IPv4(0.0.0.0)/Uri()', 'PciRoot(0x3)/Pci(0x2,0x0)/Pci(0x0,0x0)/MAC(D4F5EF6D74E8,0x1)/IPv4(0.0.0.0)', 'PciRoot(0x3)/Pci(0x2,0x0)/Pci(0x0,0x0)/MAC(D4F5EF6D74E8,0x1)/IPv6(0000:0000:0000:0000:0000:0000:0000:0000)/Uri()', 'PciRoot(0x3)/Pci(0x2,0x0)/Pci(0x0,0x0)/MAC(D4F5EF6D74E8,0x1)/IPv6(0000:0000:0000:0000:0000:0000:0000:0000)', 'PciRoot(0x1)/Pci(0x0,0x0)/Pci(0x0,0x0)/NVMe(0x1,68-33-A4-51-45-38-25-00)', 'PciRoot(0x2)/Pci(0x0,0x0)/Pci(0x0,0x0)/NVMe(0x1,BF-AD-A3-51-47-38-25-00)', 'PciRoot(0x3)/Pci(0x0,0x0)/Pci(0x0,0x0)/Scsi(0x17B,0x0)']
+BOOT_DIAGNOSTIC selected=Cd uefi_target=None virtual_media_inserted=True
+PATCH /redfish/v1/Systems/1/ -> 200
+GET /redfish/v1/Systems/1/ -> 200
+POST /redfish/v1/Systems/1/Actions/ComputerSystem.Reset/ -> 200

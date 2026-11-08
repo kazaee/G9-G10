@@ -1,0 +1,31 @@
+{
+  "target": "172.20.224.42",
+  "media_host": "172.20.224.253:8080",
+  "ilo_ping_to_media_host": "successful",
+  "local_tcp_8080_listener": "reachable",
+  "panel_iso_requests": 0,
+  "panel_iso_bytes": 0,
+  "windows_firewall_policy": "BlockInbound,AllowOutbound",
+  "bios": {
+    "BootMode": "Uefi",
+    "UsbBoot": "Enabled",
+    "UsbControl": "UsbEnabled",
+    "SecureBootStatus": "Disabled"
+  },
+  "virtual_cd_uefi_identity": "CD.Virtual.3.1 -> USB(0x1,0x0)",
+  "connection_failures": [
+    {
+      "id": "267",
+      "created": "2025-11-21T05:43:25Z",
+      "media_host": "172.20.224.253:8080",
+      "message": "iLO could not establish a connection to the media host"
+    },
+    {
+      "id": "270",
+      "created": "2025-11-21T05:44:42Z",
+      "media_host": "172.20.224.253:8080",
+      "message": "iLO could not establish a connection to the media host"
+    }
+  ],
+  "conclusion": "iLO reports failure connecting to the current media URLs; inbound TCP path requires correction. Exact drop point has not been packet-captured."
+}
