@@ -1,0 +1,4 @@
+# Copy to config/media-server.yaml to let iLO fetch ISOs from a separate web
+# server instead of this process on port 8080. Delete the file to go back.
+base_url: http://10.10.0.5/provision    # URL that every iLO can open
+publish_dir: /srv/provision             # folder served at base_url (local or mounted share)

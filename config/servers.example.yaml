@@ -1,0 +1,11 @@
+# Fleet inventory. Copy to config/servers.yaml (ignored by Git).
+# Passwords are never stored here: set ILO_PASSWORD or answer the prompt.
+defaults:
+  username: Administrator
+  verify_tls: false
+servers:
+  - name: rack1-u10
+    ilo: 172.20.224.42
+  - name: rack1-u12
+    ilo: 172.20.224.43
+    username: admin            # per-server override

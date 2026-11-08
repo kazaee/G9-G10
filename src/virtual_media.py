@@ -42,6 +42,45 @@ def require_console_media(ilo, path):
     return state
 
 
+EXTERNAL_CONFIG = Path('config/media-server.yaml')
+
+
+def external_media():
+    """Optional separate web server (e.g. nginx) that iLO can reach.
+
+    config/media-server.yaml:
+        base_url: http://10.10.0.5/provision
+        publish_dir: /srv/provision      # local dir or mounted share served at base_url
+    Without the file, ISOs are served from this process as before.
+    """
+    if not EXTERNAL_CONFIG.exists():
+        return None
+    import yaml
+    settings = yaml.safe_load(EXTERNAL_CONFIG.read_text()) or {}
+    if not settings.get('base_url') or not settings.get('publish_dir'):
+        return None
+    return {'base_url': settings['base_url'].rstrip('/'), 'publish_dir': Path(settings['publish_dir'])}
+
+
+def publish(source, target, patches=()):
+    """Hard-link when possible (instant, no extra disk); copy across filesystems."""
+    import os
+    import shutil
+    target.parent.mkdir(parents=True, exist_ok=True)
+    if not patches:
+        try:
+            os.link(source, target)
+            return
+        except OSError:
+            pass
+    shutil.copyfile(source, target)
+    if patches:
+        with target.open('r+b') as handle:
+            for offset, data in patches:
+                handle.seek(offset)
+                handle.write(data)
+
+
 class MediaServer:
     def __init__(self, iso, host, port, token, log, extras=None, patches=None):
         self.iso = iso.resolve()
@@ -51,6 +90,19 @@ class MediaServer:
         self.files = {self.route: self.iso}
         self.files.update({f'/{token}/{name}': Path(path).resolve() for name, path in (extras or {}).items()})
         self.patches = patches or []
+        # Install-complete callbacks still arrive here; only the ISO fetch by
+        # iLO moves to the external server, which the jump-host firewall blocks.
+        self.published = None
+        external = external_media()
+        if external:
+            self.published = external['publish_dir'] / token
+            for route, source in self.files.items():
+                publish(source, external['publish_dir'] / route.lstrip('/'),
+                        self.patches if source == self.iso else ())
+            self.url = external['base_url'] + self.route
+            self.extra_urls = {name: f'{external["base_url"]}/{token}/{name}' for name in (extras or {})}
+            with log.open('a', encoding='utf-8') as f:
+                f.write(f'{datetime.now(timezone.utc).isoformat()} published to {self.published}\n')
         self.events = []
         self.downloads = 0
         self.bytes_served = 0
@@ -165,6 +217,9 @@ class MediaServer:
     def close(self):
         self.server.shutdown()
         self.server.server_close()
+        if self.published:
+            import shutil
+            shutil.rmtree(self.published, ignore_errors=True)
 
 
 def cd_device(inventory):

@@ -12,4 +12,5 @@ ISO/
 # Exclude specific ISO files
 /generated/discovery.iso
 /generated/ubuntu-autoinstall.iso
-/generated/ubuntu-autoinstall.superseded.iso
+/generated/ubuntu-autoinstall.superseded.isoconfig/servers.yaml
+config/media-server.yaml
